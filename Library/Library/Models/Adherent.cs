@@ -17,11 +17,15 @@ namespace Library.Models
         public string nom { get; set; }
         [Required(ErrorMessage = "Le champ prenom est requis")]
         public string prenom { get; set; }
+
         [Required(ErrorMessage = "Le champ adresse est requis")]
         [EmailAddress(ErrorMessage = "Veuillez saisir un email valide")] //cette anotation vérifie la validité de l'emails
         public string adresse { get; set; }
         [Required(ErrorMessage = "Le champ telephone est requis")]
         public string numTelephone { set; get; }
+
+        // Relation avec la table Reservation (un adhérent peut avoir plusieurs réservations)
+        public ICollection<Reservation> Reservations { get; set; }
 
 
     }
