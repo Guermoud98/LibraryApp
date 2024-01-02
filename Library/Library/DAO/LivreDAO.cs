@@ -9,7 +9,7 @@ namespace Library.DAO
         // La déclaration de readonly sur un champ signifie que sa valeur ne peut être modifiée qu'à l'intérieur du constructeur de la classe
         private readonly LibraryDBContext _dbContext; //L'objet dbContext encapsule la connexion à la base de données + l'underscore c'est une convention de codage pour dire que c'est un champ de classe
 
-        public Livres(LibraryDBContext context)
+        public LivreDAO(LibraryDBContext context)
         {
             _context = context;
         }
