@@ -26,9 +26,9 @@ namespace Library.DAO
 			return _dbContext.Adherents.FirstOrDefault(a => a.AdherentID == id); // lambda expression, default = null, "a" parameter represents each adherent in the table
 		}
 		//  la methode qui fait l'update d'un adherent en se basant de son id
-		public void UpdateAdherent(Adherent updateeAdherent)
+		public void UpdateAdherent(Adherent updatedAdherent)
 		{
-			_dbContext.Adherents.Update(updateeAdherent);
+			_dbContext.Adherents.Update(updatedAdherent);
 			_dbContext.SaveChanges();
 		}
 		// pour afficher tous les adherents
