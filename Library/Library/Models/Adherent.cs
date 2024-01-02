@@ -12,20 +12,20 @@ namespace Library.Models
     {  
         [Key] // c'est une annotation de la clé primaire
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //auto increment
-        public int id { get; }
+        public int IdAdherent { get; }
         [Required(ErrorMessage = "Le champ nom est requis")]
-        public string nom { get; set; }
+        public string Nom { get; set; }
         [Required(ErrorMessage = "Le champ prenom est requis")]
-        public string prenom { get; set; }
+        public string Prenom { get; set; }
 
         [Required(ErrorMessage = "Le champ adresse est requis")]
         [EmailAddress(ErrorMessage = "Veuillez saisir un email valide")] //cette anotation vérifie la validité de l'emails
-        public string adresse { get; set; }
+        public string Adresse { get; set; }
         [Required(ErrorMessage = "Le champ telephone est requis")]
-        public string numTelephone { set; get; }
+        public string NumTelephone { set; get; }
 
         // Relation avec la table Reservation (un adhérent peut avoir plusieurs réservations)
-        public ICollection<Reservation> Reservations { get; set; }
+        //Spublic ICollection<Reservation> Reservations { get; set; }
 
 
     }
