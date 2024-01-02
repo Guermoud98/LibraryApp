@@ -18,7 +18,8 @@ namespace Library.DAO
 
         protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=MARIA-GM;Database=libraryApp;Integrated Security=True;");
+            // Integrated Security=True; pour l'authentification Windows
+            optionsBuilder.UseSqlServer("Server=MARIA-GM;Database=libraryApp;Integrated Security=True;TrustServerCertificate=True;");
         }
 
     }

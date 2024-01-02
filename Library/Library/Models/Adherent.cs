@@ -12,7 +12,7 @@ namespace Library.Models
     {  
         [Key] // c'est une annotation de la clé primaire
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //auto increment
-        public int IdAdherent { get; }
+        public int IdAdherent { get; set; }
         [Required(ErrorMessage = "Le champ nom est requis")]
         public string Nom { get; set; }
         [Required(ErrorMessage = "Le champ prenom est requis")]
