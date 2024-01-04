@@ -31,5 +31,9 @@ namespace Library.Business
         {
             return _livreDAO.GetLivres();
         }
+        public void RemoveLivre(int id)
+        {
+            _livreDAO.RemoveLivre(id);
+        }
     }
 }
