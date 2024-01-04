@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-
+using Library.Models;
+using System.Linq;
 namespace Library.DAO
 {
     internal class LivreDAO
@@ -11,7 +12,7 @@ namespace Library.DAO
 
         public LivreDAO(LibraryDBContext context)
         {
-            _context = context;
+            _dbContext = context;
         }
         // la méthode pour ajouter un livre
 
@@ -21,7 +22,7 @@ namespace Library.DAO
             _dbContext.SaveChanges(); // to save the changes. This method is necessary to persist the changes.
         }
         // la methode qui retourne un livre en se basant de son id
-        public Adherent GetLivreByID(int id)
+        public Livre GetLivreByID(int id)
         {
             return _dbContext.Livres.FirstOrDefault(l => l.IdLivre == id); // lambda expression, default = null, "a" parameter represents each livre in the table
         }
@@ -34,7 +35,7 @@ namespace Library.DAO
         // pour afficher tous les adherents
         public List<Livre> GetLivres()
         {
-            return _dbContext.Livres.ToList; // pour afficher tous les livres ss forme de liste
+            return _dbContext.Livres.ToList(); // pour afficher tous les livres ss forme de liste
 
         }
         //pour supprimer un livre en se basant de son id
