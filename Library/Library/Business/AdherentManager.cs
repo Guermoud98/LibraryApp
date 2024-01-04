@@ -28,6 +28,10 @@ namespace Library.Business
         {
             _adherentDAO.UpdateAdherent(adherent);
         }
+        public List<Adherent> GetAllAdherents()
+        {
+            return _adherentDAO.GetAdherents();
+        }
 
 
     }
