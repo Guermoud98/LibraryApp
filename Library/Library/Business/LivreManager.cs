@@ -23,6 +23,9 @@ namespace Library.Business
         {
            return  _livreDAO.GetLivreByID(id);
         }
-
+        public void UpdateLivre(Livre livre)
+        {
+            _livreDAO.UpdateLivre(livre);
+        }
     }
 }
