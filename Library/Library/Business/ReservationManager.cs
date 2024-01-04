@@ -20,5 +20,9 @@ namespace Library.Business
         {
             _reservationDAO.AddReservation(reservation);
         }
+        public Reservation GetReserationByID(int id)
+        {
+            return _reservationDAO.GetReserationByID(id);
+        }
     }
 }
