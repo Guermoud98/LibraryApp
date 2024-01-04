@@ -27,5 +27,9 @@ namespace Library.Business
         {
             _livreDAO.UpdateLivre(livre);
         }
+        public List<Livre> GetAllLivre()
+        {
+            return _livreDAO.GetLivres();
+        }
     }
 }
