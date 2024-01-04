@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Library",
-    "\\Library\\Library",
-    "\\Library\\Library\\Models"
+    "\\Library\\Library"
   ],
-  "SelectedNode": "\\Library\\Library\\Models\\Adherent.cs",
+  "SelectedNode": "\\Library\\Library\\Models",
   "PreviewInSolutionExplorer": false
 }

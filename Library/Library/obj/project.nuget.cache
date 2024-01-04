@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eDKTf8d+OzBK8gAcdIfF65M+fUdYkI7pebXJ4X3i9T7z+QokPQADWrxh2uwD8S7UMn8tZyEmUMy/8nw4SRO2rg==",
+  "dgSpecHash": "2u7deshpqizg5ZkUXONCbzYTiIRCh4ZVD7HyWt60eBEO8WDwFjikTEXBqVXmnRMJLjJQzN77LLEb2K/zocrOhA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrateur\\Desktop\\Main\\Emsi\\s7\\DotNet\\LibraryApp\\Library\\Library\\Library.csproj",
+  "projectFilePath": "C:\\Users\\Administrateur\\Desktop\\Main\\EMSI\\s7\\DotNet\\LibraryApp\\Library\\Library\\Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrateur\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Administrateur\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

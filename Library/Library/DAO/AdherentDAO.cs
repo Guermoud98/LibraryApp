@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Library.Models;
+using System.Linq;
 
 namespace Library.DAO
 {
@@ -11,7 +13,7 @@ namespace Library.DAO
 
         public AdherentDAO(LibraryDBContext context)
 		{
-			_context = context;
+			_dbContext = context;
 		}
 		// la méthode pour ajouter un adherent
 
@@ -23,7 +25,14 @@ namespace Library.DAO
 		// la methode qui retourne un adherent en se basant de son id
 		public Adherent GetAdherentByID(int id)
 		{
-			return _dbContext.Adherents.FirstOrDefault(a => a.AdherentID == id); // lambda expression, default = null, "a" parameter represents each adherent in the table
+			// FirstOrDefault c'est une methode de la classe Linq
+			Adherent a  = _dbContext.Adherents.FirstOrDefault(a => a.IdAdherent == id); // lambda expression, default = null, "a" parameter represents each adherent in the table
+            if (a != null) // si l'id existe
+			{
+				return a;
+			}
+
+			return null; 
 		}
 		//  la methode qui fait l'update d'un adherent en se basant de son id
 		public void UpdateAdherent(Adherent updatedAdherent)
@@ -34,7 +43,7 @@ namespace Library.DAO
 		// pour afficher tous les adherents
 		public List<Adherent> GetAdherents ()
 		{
-			return _dbContext.Adherents.ToList; // pour afficher tous les adherents ss forme de liste
+			return _dbContext.Adherents.ToList(); // pour afficher tous les adherents ss forme de liste
 
 		}
 		//pour supprimer un adherent en se basant de son id
