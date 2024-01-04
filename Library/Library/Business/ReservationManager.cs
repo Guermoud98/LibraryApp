@@ -28,6 +28,11 @@ namespace Library.Business
         {
             _reservationDAO.UpdateReservation(updatedReservation);
         }
+        public List<Reservation> GetReservations()
+        {
+            return _reservationDAO.GetReservations();
+
+        }
 
     }
 }
