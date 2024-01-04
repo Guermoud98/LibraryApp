@@ -28,10 +28,13 @@ namespace Library.Business
         {
             _reservationDAO.UpdateReservation(updatedReservation);
         }
-        public List<Reservation> GetReservations()
+        public List<Reservation> GetAllReservations()
         {
             return _reservationDAO.GetReservations();
-
+        }
+        public void RemoveReservation(int id)
+        {
+            _reservationDAO.RemoveReservation(id);
         }
 
     }
