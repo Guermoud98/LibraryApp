@@ -11,6 +11,8 @@ namespace Library.DAO
         // La déclaration de readonly sur un champ signifie que sa valeur ne peut être modifiée qu'à l'intérieur du constructeur de la classe
         private readonly LibraryDBContext _dbContext; //L'objet dbContext encapsule la connexion à la base de données + l'underscore c'est une convention de codage pour dire que c'est un champ de classe
 
+        // Constructeur qui reçoit le contexte de base de données pour avoir une référence 
+        // Ce design pattern est appele Constructor Dependency Injection
         public ReservationDAO(LibraryDBContext context)
         {
             _dbContext = context;
@@ -30,8 +32,15 @@ namespace Library.DAO
         //  la methode qui fait l'update d'une reservation en se basant de son id
         public void UpdateReservation(Reservation updatedReservation)
         {
-            _dbContext.Reservations.Update(updatedReservation);
-            _dbContext.SaveChanges();
+            if (updatedReservation == null)
+                throw new ArgumentNullException(nameof(updatedReservation));
+
+            var updatedRes = _dbContext.Adherents.Find(updatedReservation.IdReservation); //On cherche  l'id du element passé au parametre s'il existe dans la db
+            if (updatedRes != null)
+            {
+                _dbContext.Reservations.Update(updatedReservation);
+                _dbContext.SaveChanges();
+            }
         }
         // pour afficher toutes les reservations
         public List<Reservation> GetReservations()

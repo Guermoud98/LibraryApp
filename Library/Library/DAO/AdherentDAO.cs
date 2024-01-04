@@ -10,7 +10,9 @@ namespace Library.DAO
 	{
         // La déclaration de readonly sur un champ signifie que sa valeur ne peut être modifiée qu'à l'intérieur du constructeur de la classe
         private readonly LibraryDBContext _dbContext; //L'objet dbContext encapsule la connexion à la base de données + l'underscore c'est une convention de codage pour dire que c'est un champ de classe
-
+		
+		// Constructeur qui reçoit le contexte de base de données pour avoir une référence 
+        // Ce design pattern est appele dependency injection
         public AdherentDAO(LibraryDBContext context)
 		{
 			_dbContext = context;
@@ -37,8 +39,15 @@ namespace Library.DAO
 		//  la methode qui fait l'update d'un adherent en se basant de son id
 		public void UpdateAdherent(Adherent updatedAdherent)
 		{
-			_dbContext.Adherents.Update(updatedAdherent);
-			_dbContext.SaveChanges();
+            if (updatedAdherent == null)
+                throw new ArgumentNullException(nameof(updatedAdherent));
+
+            var updatedAd = _dbContext.Adherents.Find(updatedAdherent.IdAdherent); //On cherche  l'id du element passé au parametre s'il existe dans la db
+			if (updatedAd != null)
+			{
+				_dbContext.Adherents.Update(updatedAdherent);
+				_dbContext.SaveChanges();
+			}   
 		}
 		// pour afficher tous les adherents
 		public List<Adherent> GetAdherents ()
