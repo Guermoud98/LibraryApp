@@ -32,6 +32,10 @@ namespace Library.Business
         {
             return _adherentDAO.GetAdherents();
         }
+        public void RemoveAdherent(int id)
+        {
+            _adherentDAO.RemoveAdherent(id);
+        }
 
 
     }
