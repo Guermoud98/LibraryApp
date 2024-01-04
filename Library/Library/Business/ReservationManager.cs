@@ -24,5 +24,10 @@ namespace Library.Business
         {
             return _reservationDAO.GetReserationByID(id);
         }
+        public void UpdateReservation(Reservation updatedReservation)
+        {
+            _reservationDAO.UpdateReservation(updatedReservation);
+        }
+
     }
 }
