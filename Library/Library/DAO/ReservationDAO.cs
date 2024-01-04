@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Library.Models;
+using System.Linq;
 
 namespace Library.DAO
 {
@@ -11,7 +13,7 @@ namespace Library.DAO
 
         public ReservationDAO(LibraryDBContext context)
         {
-            _context = context;
+            _dbContext = context;
         }
         // la méthode pour ajouter une reservation
 
@@ -26,7 +28,7 @@ namespace Library.DAO
             return _dbContext.Reservations.FirstOrDefault(r => r.IdReservation == id); // lambda expression, default = null, "a" parameter represents each reservation in the table
         }
         //  la methode qui fait l'update d'une reservation en se basant de son id
-        public void UpdateLivre(Livre updatedReservation)
+        public void UpdateReservation(Reservation updatedReservation)
         {
             _dbContext.Reservations.Update(updatedReservation);
             _dbContext.SaveChanges();
@@ -34,7 +36,7 @@ namespace Library.DAO
         // pour afficher toutes les reservations
         public List<Reservation> GetReservations()
         {
-            return _dbContext.Reservations.ToList; // pour afficher toutes les reservations ss forme de liste
+            return _dbContext.Reservations.ToList(); // pour afficher toutes les reservations ss forme de liste
 
         }
         //pour supprimer une reservation en se basant de son id
@@ -43,7 +45,7 @@ namespace Library.DAO
             var ReservationToRemove = _dbContext.Reservations.Find(id);
             if (ReservationToRemove != null)
             {
-                _dbContext.Livres.Remove(ReservationToRemove);
+                _dbContext.Reservations.Remove(ReservationToRemove);
                 _dbContext.SaveChanges();
             }
         }
