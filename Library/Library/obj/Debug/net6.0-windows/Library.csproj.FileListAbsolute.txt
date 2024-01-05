@@ -67,3 +67,5 @@ C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\o
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\AccueilWindow.baml
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\InscriptionWindow.g.cs
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\InscriptionWindow.baml
+C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\ConnexionWindow.g.cs
+C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\ConnexionWindow.baml

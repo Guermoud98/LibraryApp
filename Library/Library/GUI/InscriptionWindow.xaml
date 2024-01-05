@@ -15,18 +15,18 @@
         <Label Content="Veuillez entrer vos détails pour s'inscrire" HorizontalAlignment="Left" Margin="480,65,0,0" VerticalAlignment="Top"/>
         <!-- Nom  -->
         <Label Content="Nom" HorizontalAlignment="Left" Margin="536,129,0,0" VerticalAlignment="Top" Width="65"/>
-        <TextBox HorizontalAlignment="Left" Margin="615,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBoxNom" HorizontalAlignment="Left" Margin="615,131,0,0" TextWrapping="Wrap" Text="TextBoxNom" VerticalAlignment="Top" Width="120"/>
         <!-- Prénom  -->
         <Label Content="Prénom" HorizontalAlignment="Left" Margin="531,180,0,0" VerticalAlignment="Top" Width="65"/>
-        <TextBox HorizontalAlignment="Left" Margin="615,185,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBoxPrenom" HorizontalAlignment="Left" Margin="615,185,0,0" TextWrapping="Wrap" Text="TextBoxPrenom" VerticalAlignment="Top" Width="120"/>
         <!-- Email  -->
         <Label Content="Email" HorizontalAlignment="Left" Margin="535,224,0,0" VerticalAlignment="Top" Width="64"/>
-        <TextBox HorizontalAlignment="Left" Margin="615,230,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Left" Margin="615,230,0,0" TextWrapping="Wrap" Text="TextBoxEmail" VerticalAlignment="Top" Width="120"/>
         <!-- Password  -->
         <Label Content="Password" HorizontalAlignment="Left" Margin="530,272,0,0" VerticalAlignment="Top" Width="65"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="615,280,0,0" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="615,280,0,0" VerticalAlignment="Top" Width="120"/>
         <!-- btn crreer un compte -->
-        <Button Content="Créer un Compte" HorizontalAlignment="Left" Margin="601,343,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Créer un Compte" HorizontalAlignment="Left" Margin="601,343,0,0" VerticalAlignment="Top" Click="CreerCompte"/>
 
     </Grid>
 </Window>

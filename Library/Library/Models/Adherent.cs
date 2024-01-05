@@ -22,10 +22,15 @@ namespace Library.Models
 
         [Required(ErrorMessage = "Le champ adresse est requis")]
         [EmailAddress(ErrorMessage = "Veuillez saisir un email valide")] //cette anotation vérifie la validité de l'emails
-        public string Adresse { get; set; }
+        public string email { get; set; }
         [Required(ErrorMessage = "Le champ telephone est requis")]
-        
-        public string NumTelephone { set; get; }
+
+        // Mot de passe de l'adherent 
+        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$", ErrorMessage = "Le mot de passe doit contenir au moins une lettre et un chiffre.")]
+        public string MotDePasse { get; set; }
+
+
+
 
         // Relation avec la table Reservation (un adhérent peut avoir plusieurs réservations)
         //Spublic ICollection<Reservation> Reservations { get; set; }

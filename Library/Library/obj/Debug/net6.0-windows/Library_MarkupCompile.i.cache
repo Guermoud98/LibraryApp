@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\App.xaml
-3534353676
+41293282323
 
-26-1705118891
+29-803527228
 222-620177467
-GUI\AccueilWindow.xaml;GUI\InscriptionWindow.xaml;MainWindow.xaml;
+GUI\AccueilWindow.xaml;GUI\ConnexionWindow.xaml;GUI\InscriptionWindow.xaml;MainWindow.xaml;
 
-True
+False
 

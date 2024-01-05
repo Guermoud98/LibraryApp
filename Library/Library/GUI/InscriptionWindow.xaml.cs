@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,32 @@ namespace Library.GUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void CreerCompte(object sender, RoutedEventArgs e)
+        {
+            //Récupération des valeurs
+            string nom = TextBoxNom.Text;
+            string prenom = TextBoxPrenom.Text;
+            string adresse = TextBoxEmail.Text;
+            string password = PasswordBox.Password;
+
+            // Validater les inputs
+            if (string.IsNullOrWhiteSpace(nom) || string.IsNullOrWhiteSpace(prenom) || string.IsNullOrWhiteSpace(adresse) || string.IsNullOrWhiteSpace(password))
+            {
+                // On Affiche un message d'erreur
+                MessageBox.Show("Please fill in all the required fields.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            Adherent newAdherent = new Adherent
+            {
+                Nom = nom,
+                Prenom = prenom,
+                //Adresse = adresse,
+                //MotDePasse = password
+                // Set other properties as needed
+            };
 
         }
     }
