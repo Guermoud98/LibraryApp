@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Image HorizontalAlignment="Left" Height="204" Margin="429,95,0,0" VerticalAlignment="Top" Width="250">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="GUI/boyImage.jpg" TileMode="None">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform X="-1" Y="0"/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Image.OpacityMask>
+        </Image>
     </Grid>
 </Window>

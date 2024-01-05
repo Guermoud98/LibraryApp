@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\App.xaml
-11407045341
+2-1853750447
 
-15-1971737149
+231919032127
 222-620177467
-MainWindow.xaml;
+GUI\AccueilWindow.xaml;MainWindow.xaml;
 
-True
+False
 

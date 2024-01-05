@@ -23,6 +23,9 @@ namespace Library
         public MainWindow()
         {
             InitializeComponent();
+            // Create an Image control
+       
+
         }
     }
 }
