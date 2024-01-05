@@ -1,0 +1,32 @@
+﻿<Window x:Class="Library.GUI.Inscription"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library.GUI"
+        mc:Ignorable="d"
+        Title="Inscription" Height="450" Width="800">
+    <Grid>
+        <!-- LibraryImage -->
+        <Image HorizontalAlignment="Left" Height="705" VerticalAlignment="Top" Width="481" Source="/GUI/LibraryImage.jpg" Margin="-15,-123,0,0" RenderTransformOrigin="0.418,0.506" />
+        <!-- S'insrire Label -->
+        <Label Content="S'inscrire" HorizontalAlignment="Left" Margin="478,38,0,0" VerticalAlignment="Top"/>
+        <!-- La phrase  -->
+        <Label Content="Veuillez entrer vos détails pour s'inscrire" HorizontalAlignment="Left" Margin="480,65,0,0" VerticalAlignment="Top"/>
+        <!-- Nom  -->
+        <Label Content="Nom" HorizontalAlignment="Left" Margin="536,129,0,0" VerticalAlignment="Top" Width="65"/>
+        <TextBox HorizontalAlignment="Left" Margin="615,131,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <!-- Prénom  -->
+        <Label Content="Prénom" HorizontalAlignment="Left" Margin="531,180,0,0" VerticalAlignment="Top" Width="65"/>
+        <TextBox HorizontalAlignment="Left" Margin="615,185,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <!-- Email  -->
+        <Label Content="Email" HorizontalAlignment="Left" Margin="535,224,0,0" VerticalAlignment="Top" Width="64"/>
+        <TextBox HorizontalAlignment="Left" Margin="615,230,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <!-- Password  -->
+        <Label Content="Password" HorizontalAlignment="Left" Margin="530,272,0,0" VerticalAlignment="Top" Width="65"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="615,280,0,0" VerticalAlignment="Top" Width="120"/>
+        <!-- btn crreer un compte -->
+        <Button Content="Créer un Compte" HorizontalAlignment="Left" Margin="601,343,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+
+    </Grid>
+</Window>

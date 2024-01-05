@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:Library.GUI"
         mc:Ignorable="d"
         Title="Accueil" Height="450" Width="800">
-    <Grid>
-        <Image HorizontalAlignment="Left" Height="261" Margin="487,0,0,0" VerticalAlignment="Center" Width="297" Source="/GUI/boyImage.jpg" />
-
+    <Grid Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}">
+        <!-- BoyImage -->
+        <Image HorizontalAlignment="Left" Height="261" Margin="487,0,0,0" VerticalAlignment="Center" Width="297" Source="/GUI/boyImageWithoutBg.png" />
         <!-- Se connecter button -->
-        <Button x:Name="Connexion" Content="Se connecter" HorizontalAlignment="Left" Margin="613,29,0,0" VerticalAlignment="Top" Click="Button_Click" Background="Black" Foreground="White" Height="25" Width="78">
+        <Button x:Name="Connexion" Content="Se connecter" HorizontalAlignment="Left" Margin="613,29,0,0" VerticalAlignment="Top" Click="Login" Background="Black" Foreground="White" Height="25" Width="78">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
@@ -21,7 +21,7 @@
         </Button>
 
         <!-- S'inscrire button -->
-        <Button x:Name="Inscription" Content="S'inscrire" HorizontalAlignment="Left" Margin="540,29,0,0" VerticalAlignment="Top" Click="Button_Click" Foreground="Black" Background="White" Height="25" Width="67">
+        <Button x:Name="Sinscrire" Content="S'inscrire" HorizontalAlignment="Left" Margin="540,29,0,0" VerticalAlignment="Top" Click="SignUp" Foreground="Black" Background="White" Height="25" Width="67">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
@@ -52,12 +52,12 @@
             </TextBlock.Style>
         </TextBlock>
         <!-- Logo -->
-        <Image HorizontalAlignment="Left" Height="49" Margin="100,18,0,0" VerticalAlignment="Top" Width="64" Source="/GUI/bookLogo.png"/>
+        <Image HorizontalAlignment="Left" Height="49" Margin="100,18,0,0" VerticalAlignment="Top" Width="64" Source="/GUI/bookLogoWithoutBg.png"/>
         <!-- Titre -->
         <TextBlock HorizontalAlignment="Left" Margin="100,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="108" Width="236" FontSize="36" FontWeight="Bold"><Run Language="fr-ma" Text="Read wild,"/><LineBreak/><Run Language="fr-ma" Text="Study wild"/></TextBlock>
         <!-- A propos -->
         <TextBlock HorizontalAlignment="Center" Margin="0,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="fr-ma" Text="A propos"/></TextBlock>
-        
+
 
     </Grid>
 </Window>

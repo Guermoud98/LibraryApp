@@ -24,17 +24,14 @@ namespace Library.GUI
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SignUp(object sender, RoutedEventArgs e)
         {
-             
+                Inscription ins = new Inscription();
+                ins.Show();
+                Hide();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        private void Login(object sender, RoutedEventArgs e)
         {
 
         }

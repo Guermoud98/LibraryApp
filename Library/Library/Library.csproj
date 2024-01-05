@@ -9,8 +9,10 @@
 
   <ItemGroup>
     <None Remove="boyImage.jpg" />
-    <None Remove="GUI\bookLogo.png" />
+    <None Remove="GUI\bookLogoWithoutBg.png" />
     <None Remove="GUI\boyImage.jpg" />
+    <None Remove="GUI\boyImageWithoutBg.png" />
+    <None Remove="GUI\LibraryImage.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,8 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="GUI\bookLogo.png" />
-    <Resource Include="GUI\boyImage.jpg" />
+    <Resource Include="GUI\bookLogoWithoutBg.png" />
+    <Resource Include="GUI\boyImageWithoutBg.png" />
+    <Resource Include="GUI\LibraryImage.jpg" />
   </ItemGroup>
 
 </Project>
