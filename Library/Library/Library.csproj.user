@@ -10,10 +10,16 @@
     <Compile Update="GUI\AccueilWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GUI\BooksWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="GUI\ConnexionWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="GUI\InscriptionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GUI\ListOfBooks.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -21,10 +27,16 @@
     <Page Update="GUI\AccueilWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="GUI\BooksWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="GUI\ConnexionWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GUI\InscriptionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI\ListOfBooks.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

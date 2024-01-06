@@ -125,9 +125,6 @@ namespace Library.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdLivre"));
 
-                    b.Property<int>("AnneePublication")
-                        .HasColumnType("int");
-
                     b.Property<string>("Auteur")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -136,12 +133,13 @@ namespace Library.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Disponible")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Editeur")
+                    b.Property<string>("Disponible")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Image")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Titre")
                         .IsRequired()

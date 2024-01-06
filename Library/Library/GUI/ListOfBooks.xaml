@@ -1,0 +1,62 @@
+﻿<Window x:Class="Library.GUI.ListOfBooks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library.GUI"
+        mc:Ignorable="d"
+        Title="ListOfBooks" Height="450" Width="800">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="667" VerticalAlignment="Top" Width="674" Source="C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\background.jpg" Margin="739,-1,0,0" />
+        <Image HorizontalAlignment="Left" Height="667" VerticalAlignment="Top" Width="676" Source="C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\background.jpg" Margin="-627,0,0,0"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="309,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="210"><Run Text="Rechercher des livres"/><Run Language="fr-ma" Text=" par catégorie" /></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="325,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="fr-ma" Text="History"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="382,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="fr-ma" Text="Science"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="440,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="fr-ma" Text="Business"/></TextBlock>
+
+
+        <WrapPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Width="720" Margin="54,110,0,0" Height="206">
+            <StackPanel Margin="10">
+                <Image Source="C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\ACityOnMarsScience.jpg" Width="98" Height="133"/>
+                <TextBlock Text="A City on Mars" TextAlignment="Center" Height="16"/>
+                <TextBlock TextAlignment="Center" Foreground="Green" Height="17"><Run Language="fr-ma" Text="Read"/></TextBlock>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <Image Source="C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\AliAbdalBusiness.jpg" Width="92" Height="133"/>
+                <TextBlock TextAlignment="Center"><Run Language="fr-ma" Text="Feel Good"/></TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="Red"><Run Foreground="Green" Text="Read"/></TextBlock>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <Image Source="C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\Bonesheker.jpg" Width="92" Height="134"/>
+                <TextBlock TextAlignment="Center"><Run Language="fr-ma" Text="Boneshaker"/></TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="Red"><Run Foreground="Green" Text="Read"/></TextBlock>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <Image Source="C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\Mike.jpg" Width="91" Height="133"/>
+                <TextBlock TextAlignment="Center"><Run Language="fr-ma" Text="The Buntlin"/></TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="Red"><Run Foreground="Green" Text="Read"/></TextBlock>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <Image Source="C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\Feed.jpg" Width="92" Height="132"/>
+                <TextBlock TextAlignment="Center"><Run Language="fr-ma" Text="Feed"/></TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="Red"><Run Foreground="Green" Text="Read"/></TextBlock>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <Image Source="C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\GatorScience.jpg" Width="92" Height="131"/>
+                <TextBlock TextAlignment="Center" Height="14"><Run Language="fr-ma" Text="Gator"/></TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="Red"><Run Foreground="Green" Text="Read"/></TextBlock>
+            </StackPanel>
+
+
+        </WrapPanel>
+        <TextBlock TextWrapping="Wrap" Text="Découvrez la nouveauté" Margin="271,54,128,329"
+           FontSize="24" FontWeight="Bold" Foreground="#333333" FontFamily="Segoe UI"/>
+
+    </Grid>
+</Window>

@@ -17,16 +17,14 @@ namespace Library.Models
         public string Titre { get; set; }
         [Required(ErrorMessage = "le champ auteur est requis")] // equivalent a NOT NULL
         public string Auteur { get; set;}
-        [Required(ErrorMessage = "Le champ editeur est requis")]
-        public string Editeur { get; set; }
-        [Required(ErrorMessage = "Le champ anneePublication est requis")]
-        [Range(1900, 2023, ErrorMessage = "Veuillez saisir une annee de publication entre 1900 et 2023")]
-        public int AnneePublication { get; set; }
+       
         [Required(ErrorMessage = "Le champ categorie est requis")]
         public string Categorie { get; set; }
 
         [Required(ErrorMessage = "Le champ Disponible est requis.")]
-        public bool Disponible { get; set; }
+        public string Disponible { get; set; }
+
+        public byte[] Image { get; set; }
 
         // Relation avec la table Reservation (un livre peut avoir plusieurs réservations)
         //public ICollection<Reservation> Reservations { get; set; }

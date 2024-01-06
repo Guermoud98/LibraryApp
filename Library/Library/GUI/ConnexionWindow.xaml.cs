@@ -47,11 +47,21 @@ namespace Library.GUI
             if(connectedtAdherent != null)
             {
                 MessageBox.Show($"Welcome! You are now connected.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                ListOfBooks list = new ListOfBooks();
+                list.Show();
+                Hide();
 
             }
 
 
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            BooksWindow b = new BooksWindow();
+            b.Show();
+            Hide();
         }
     }
 }
