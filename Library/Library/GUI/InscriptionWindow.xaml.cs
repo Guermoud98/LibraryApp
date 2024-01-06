@@ -1,4 +1,6 @@
-﻿using Library.Models;
+﻿using Library.Business;
+using Library.DAO;
+using Library.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +22,7 @@ namespace Library.GUI
     /// </summary>
     public partial class Inscription : Window
     {
+        LibraryDBContext conn = new LibraryDBContext();
         public Inscription()
         {
             InitializeComponent();
@@ -40,11 +43,11 @@ namespace Library.GUI
             //Récupération des valeurs
             string nom = TextBoxNom.Text;
             string prenom = TextBoxPrenom.Text;
-            string adresse = TextBoxEmail.Text;
+            string email = TextBoxEmail.Text;
             string password = PasswordBox.Password;
 
             // Validater les inputs
-            if (string.IsNullOrWhiteSpace(nom) || string.IsNullOrWhiteSpace(prenom) || string.IsNullOrWhiteSpace(adresse) || string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(nom) || string.IsNullOrWhiteSpace(prenom) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
                 // On Affiche un message d'erreur
                 MessageBox.Show("Please fill in all the required fields.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -54,11 +57,12 @@ namespace Library.GUI
             {
                 Nom = nom,
                 Prenom = prenom,
-                //Adresse = adresse,
-                //MotDePasse = password
-                // Set other properties as needed
+                email = email,
+                MotDePasse = password
             };
-
+            // Use the AdherentManager to add the new Adherent
+            AdherentManager adherentManager = new AdherentManager(new AdherentDAO(conn));
+            adherentManager.AddAdherent(newAdherent);
         }
     }
 }

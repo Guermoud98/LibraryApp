@@ -27,6 +27,7 @@ namespace Library.Models
 
         // Mot de passe de l'adherent 
         [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$", ErrorMessage = "Le mot de passe doit contenir au moins une lettre et un chiffre.")]
+        [DataType(DataType.Password)] //hashage du password //doesnt work
         public string MotDePasse { get; set; }
 
 
