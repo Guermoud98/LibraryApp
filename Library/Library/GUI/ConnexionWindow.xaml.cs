@@ -28,5 +28,18 @@ namespace Library.GUI
         {
 
         }
+
+        private void SeConnecter(object sender, RoutedEventArgs e)
+        {
+            String email = TextBoxEmail.Text;
+            String password = PasswordBox.Password;
+            if(String.IsNullOrWhiteSpace(email) || String.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Please fill in all the required fields.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+
+        }
     }
 }

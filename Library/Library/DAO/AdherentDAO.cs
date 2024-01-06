@@ -65,7 +65,12 @@ namespace Library.DAO
 				_dbContext.SaveChanges();
 			}
 		}
+		// utile pour la connexion d'un adherent à l'app 
+        public Adherent GetAdherentByEmailPassword(string email, string motDePasse)
+        {
+			return _dbContext.Adherents.SingleOrDefault(e => e.email == email && e.MotDePasse == motDePasse);
+        }
 
 
-	}
+    }
 }

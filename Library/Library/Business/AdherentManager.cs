@@ -36,7 +36,12 @@ namespace Library.Business
         {
             _adherentDAO.RemoveAdherent(id);
         }
-
-
+        // Se connecter 
+        
+        public Adherent Connecter(string email, string motDePasse)
+        {
+            return _adherentDAO.GetAdherentByEmailPassword(email, motDePasse);
+        }
+        
     }
 }

@@ -33,8 +33,7 @@ namespace Library.Models
 
 
 
-        // Relation avec la table Reservation (un adhérent peut avoir plusieurs réservations)
-        //Spublic ICollection<Reservation> Reservations { get; set; }
+        
 
 
     }
