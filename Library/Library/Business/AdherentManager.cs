@@ -3,7 +3,9 @@ using Library.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 
@@ -18,7 +20,14 @@ namespace Library.Business
         }
         public void AddAdherent(Adherent adherent)
         {
-            _adherentDAO.AddAdherent(adherent);
+                _adherentDAO.AddAdherent(adherent);   
+        }
+        //verification de l'email s'il est valid ou pas
+        public bool ValidEmail(string email)
+        {
+            //regex expression
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            return Regex.IsMatch(email, emailPattern);
         }
         public void GetAdherentByID(int id)
         {

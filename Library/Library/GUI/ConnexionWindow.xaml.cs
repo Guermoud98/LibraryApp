@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Library.Business;
+using Library.DAO;
+using Library.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +22,7 @@ namespace Library.GUI
     /// </summary>
     public partial class ConnexionWindow : Window
     {
+        LibraryDBContext conn = new LibraryDBContext();
         public ConnexionWindow()
         {
             InitializeComponent();
@@ -38,6 +42,14 @@ namespace Library.GUI
                 MessageBox.Show("Please fill in all the required fields.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+            AdherentManager adherentManager = new AdherentManager(new AdherentDAO(conn));
+            Adherent connectedtAdherent = adherentManager.Connecter(email, password);
+            if(connectedtAdherent != null)
+            {
+                MessageBox.Show($"Welcome! You are now connected.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            }
+
 
 
         }

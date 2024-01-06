@@ -62,7 +62,16 @@ namespace Library.GUI
             };
             // Use the AdherentManager to add the new Adherent
             AdherentManager adherentManager = new AdherentManager(new AdherentDAO(conn));
-            adherentManager.AddAdherent(newAdherent);
+            if(adherentManager.ValidEmail(email))
+            {
+                adherentManager.AddAdherent(newAdherent);
+            }
+            else
+            {
+                MessageBox.Show("Invalid Email");
+            }
+            
+
         }
     }
 }
