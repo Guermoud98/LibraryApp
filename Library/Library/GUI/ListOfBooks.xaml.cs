@@ -87,9 +87,9 @@ namespace Library.GUI
                 TextBlock readTextBlock = new TextBlock();
                 readTextBlock.TextAlignment = TextAlignment.Center;
                 readTextBlock.Foreground = Brushes.Green;
-                readTextBlock.Inlines.Add(new Run("Read"));
-                stackPanel.Children.Add(readTextBlock);
-
+                Button readButton = new Button();
+                readButton.Content = "Read";
+                stackPanel.Children.Add(readButton);
                 wrapPanel.Children.Add(stackPanel);
             }
 
