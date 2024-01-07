@@ -27,7 +27,7 @@ namespace Library.GUI.booksPicture
                 new BookTitlePath.BookInfo { Title = "Rot and Ruin", ImagePath = @"C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\Rot&Ruin.jpg" },
                 new BookTitlePath.BookInfo { Title = "Soldier Of Destiny", ImagePath = @"C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\SoldierOfDestinyHistory.jpg" },
                 new BookTitlePath.BookInfo { Title = "The First Days", ImagePath = @"C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\TheFirstDays.jpg" },
-                new BookTitlePath.BookInfo { Title = "Tim Powers", ImagePath = @"C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\TimPowers.jpg" },
+                new BookTitlePath.BookInfo { Title = "The Anubis Gates", ImagePath = @"C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\TheAnubisGates.jpg" },
                 new BookTitlePath.BookInfo { Title = "Ufo", ImagePath = @"C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\UfoHistory.jpg" },
             };
 

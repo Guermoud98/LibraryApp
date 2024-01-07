@@ -28,10 +28,6 @@ namespace Library.GUI
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void SeConnecter(object sender, RoutedEventArgs e)
         {
@@ -46,12 +42,13 @@ namespace Library.GUI
             Adherent connectedtAdherent = adherentManager.Connecter(email, password);
             if(connectedtAdherent != null)
             {
-                MessageBox.Show($"Welcome! You are now connected.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Welcome! You are now connected.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 ListOfBooks list = new ListOfBooks();
                 list.Show();
                 Hide();
 
             }
+            //je dois ajouter si less identifiants sont incorrectes
 
 
 

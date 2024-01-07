@@ -40,6 +40,7 @@ namespace Library.DAO
                 _dbContext.Livres.Update(updatedLivre);
                 _dbContext.SaveChanges();
             }
+
         }
         // pour afficher tous les adherents
         public List<Livre> GetLivres()

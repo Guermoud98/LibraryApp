@@ -10,23 +10,42 @@
         <!-- LibraryImage -->
         <Image HorizontalAlignment="Left" Height="705" VerticalAlignment="Top" Width="481" Source="/GUI/LibraryImage.jpg" Margin="-15,-123,0,0" RenderTransformOrigin="0.418,0.506" />
         <!-- S'insrire Label -->
-        <Label Content="S'inscrire" HorizontalAlignment="Left" Margin="478,38,0,0" VerticalAlignment="Top"/>
+        <Label Content="S'inscrire" HorizontalAlignment="Left" Margin="478,38,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="23"/>
         <!-- La phrase  -->
-        <Label Content="Veuillez entrer vos détails pour s'inscrire" HorizontalAlignment="Left" Margin="480,65,0,0" VerticalAlignment="Top"/>
+        <Label Content="Veuillez entrer vos détails pour s'inscrire" HorizontalAlignment="Left" Margin="480,81,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="10"/>
         <!-- Nom  -->
-        <Label Content="Nom" HorizontalAlignment="Left" Margin="536,129,0,0" VerticalAlignment="Top" Width="65"/>
-        <TextBox x:Name="TextBoxNom" HorizontalAlignment="Left" Margin="615,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Margin="524,129,0,0" VerticalAlignment="Top" Width="65" FontWeight="Bold"/>
+        <TextBox x:Name="TextBoxNom" HorizontalAlignment="Left" Margin="603,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Height="24"/>
         <!-- Prénom  -->
-        <Label Content="Prénom" HorizontalAlignment="Left" Margin="531,180,0,0" VerticalAlignment="Top" Width="65"/>
-        <TextBox x:Name="TextBoxPrenom" HorizontalAlignment="Left" Margin="615,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Prénom" HorizontalAlignment="Left" Margin="519,180,0,0" VerticalAlignment="Top" Width="65" FontWeight="Bold"/>
+        <TextBox x:Name="TextBoxPrenom" HorizontalAlignment="Left" Margin="603,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Height="21"/>
         <!-- Email  -->
-        <Label Content="Email" HorizontalAlignment="Left" Margin="535,224,0,0" VerticalAlignment="Top" Width="64"/>
-        <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Left" Margin="615,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="523,226,0,0" VerticalAlignment="Top" Width="64" FontWeight="Bold"/>
+        <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Left" Margin="603,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Height="20"/>
         <!-- Password  -->
-        <Label Content="Password" HorizontalAlignment="Left" Margin="530,272,0,0" VerticalAlignment="Top" Width="65"/>
-        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="615,280,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="518,278,0,0" VerticalAlignment="Top" Width="65" FontWeight="Bold"/>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="603,284,0,0" VerticalAlignment="Top" Width="159" RenderTransformOrigin="0.5,0.5" Height="17">
+            <PasswordBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.416"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </PasswordBox.RenderTransform>
+        </PasswordBox>
         <!-- btn crreer un compte -->
-        <Button Content="Créer un Compte" HorizontalAlignment="Left" Margin="601,343,0,0" VerticalAlignment="Top" Click="CreerCompte"/>
+        <!-- Se connecter button -->
+        <Button Content="Créer un Compte" HorizontalAlignment="Left" Margin="564,338,0,0" VerticalAlignment="Top" Click="CreerCompte" Background="Black" Foreground="White" Height="25" Width="122">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
 
     </Grid>
 </Window>

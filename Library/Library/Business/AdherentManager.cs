@@ -1,8 +1,10 @@
 ﻿using Library.DAO;
 using Library.Models;
+using Library.Sessions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -49,7 +51,15 @@ namespace Library.Business
         
         public Adherent Connecter(string email, string motDePasse)
         {
-            return _adherentDAO.GetAdherentByEmailPassword(email, motDePasse);
+            Adherent connectedAdherent = _adherentDAO.GetAdherentByEmailPassword(email, motDePasse);
+            if (connectedAdherent != null)
+            {
+                // Store the connected adherent's ID in the session
+                int idConnectAdherent = connectedAdherent.IdAdherent;
+                ConnectedAdherent.SetCurrentAdherentId(idConnectAdherent);
+            }
+
+            return connectedAdherent;
         }
         
     }

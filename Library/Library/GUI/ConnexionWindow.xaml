@@ -9,13 +9,28 @@
     <Grid>
         <!-- LibraryImage -->
         <Image HorizontalAlignment="Left" Height="705" VerticalAlignment="Top" Width="481" Source="/GUI/LibraryImage.jpg" Margin="-15,-123,0,0" RenderTransformOrigin="0.418,0.506" />
-        <Label Content="Email" HorizontalAlignment="Left" Margin="535,162,0,0" VerticalAlignment="Top" Width="64"/>
-        <Label Content="Se connecter" HorizontalAlignment="Left" Margin="478,38,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Left" Margin="615,166,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="530,222,0,0" VerticalAlignment="Top" Width="65"/>
-        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="615,228,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnSeConnecter" Content="Se connecter" HorizontalAlignment="Left" Margin="591,309,0,0" VerticalAlignment="Top" Click="SeConnecter"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="535,371,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="513,152,0,0" VerticalAlignment="Top" Width="64" FontWeight="Bold"/>
+        <Label Content="Se connecter" HorizontalAlignment="Left" Margin="489,71,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="23"/>
 
+        <TextBox x:Name="TextBoxEmail" HorizontalAlignment="Left" Margin="593,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Height="20"/>
+
+
+        <Label Content="Password" HorizontalAlignment="Left" Margin="508,216,0,0" VerticalAlignment="Top" Width="65" FontWeight="Bold"/>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="593,218,0,0" VerticalAlignment="Top" Width="175" Height="23" />
+        <!-- Se connecter button -->
+        <Button x:Name="btnSeConnecter" Content="Se connecter" HorizontalAlignment="Left" Margin="597,282,0,0" VerticalAlignment="Top" Click="SeConnecter" Background="Black" Foreground="White" Height="25" Width="78">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- 
+        <Button Content="Button" HorizontalAlignment="Left" Margin="535,371,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        
+        
+        -->
     </Grid>
 </Window>

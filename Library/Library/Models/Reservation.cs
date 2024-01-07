@@ -25,11 +25,6 @@ namespace Library.Models
         [ForeignKey(("IdAdherent"))]
         public int AdherentId { get; set; }
 
-        // Identifiant de l'employe associé à la réservation (obligatoire avec un message d'erreur personnalisé si manquant)
-        [Required(ErrorMessage = "Le champ AdherentId est requis.")]
-        [ForeignKey(("IdEmploye"))]
-        public int EmployeId { get; set; }
-
 
         // Date de réservation (obligatoire avec un message d'erreur personnalisé si manquant)
         [Required(ErrorMessage = "Le champ DateReservation est requis.")]
@@ -40,7 +35,7 @@ namespace Library.Models
         public DateTime DateRetourPrevue { get; set; }
 
         // Indicateur de retour effectué (par défaut à false, car la réservation n'a pas encore été retournée)
-        public bool RetourEffectue { get; set; } = false;
+       // public bool RetourEffectue { get; set; } = false;
 
         // Relation avec la table Livre (une réservation appartient à un livre)
         //public Livre livre { get; set; }

@@ -12,7 +12,7 @@
 
         <TextBlock HorizontalAlignment="Left" Margin="309,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="210"><Run Text="Rechercher des livres"/><Run Language="fr-ma" Text=" par catégorie" /></TextBlock>
 
-
+        
         <WrapPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Width="720" Margin="54,110,0,0" Height="206">
             <StackPanel Margin="10">
                 <Image Source="C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\ACityOnMarsScience.jpg" Width="98" Height="133"/>
@@ -54,9 +54,37 @@
         </WrapPanel>
         <TextBlock TextWrapping="Wrap" Text="Découvrez la nouveauté" Margin="271,54,128,329"
            FontSize="24" FontWeight="Bold" Foreground="#333333" FontFamily="Segoe UI"/>
-        <Button Content="History" HorizontalAlignment="Left" Margin="321,373,0,0" VerticalAlignment="Top" Click="HistoryBook"/>
-        <Button Content="Science" HorizontalAlignment="Center" Margin="0,373,0,0" VerticalAlignment="Top"/>
-        <Button Content="Business&#xD;&#xA;" HorizontalAlignment="Left" Height="20" Margin="442,373,0,0" VerticalAlignment="Top" Width="51"/>
+        <!-- History btn -->
+        <Button x:Name="History" Content="History" HorizontalAlignment="Left" Margin="271,368,0,0" VerticalAlignment="Top" Click="HistoryBook" Background="Black" Foreground="White" Height="25" Width="78">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!-- Science btn -->
+        <Button x:Name="Science" Content="Science" HorizontalAlignment="Left" Margin="358,368,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White" Height="25" Width="78">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <!--Business btn -->
+        <Button x:Name="Business" Content="Business" HorizontalAlignment="Left" Margin="445,368,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White" Height="25" Width="78">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
 
     </Grid>
 </Window>

@@ -21,8 +21,20 @@ namespace Library.DAO
 
         public void AddReservation(Reservation reservation)
         {
-            _dbContext.Reservations.Add(reservation); // on ajoute a 'DbSet Reservations' une reservation passe au parametre
-            _dbContext.SaveChanges(); // to save the changes. This method is necessary to persist the changes.
+            try
+            {
+                using (LibraryDBContext dbContext = new LibraryDBContext())
+                {
+                    dbContext.Reservations.Add(reservation);
+                    dbContext.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception, you might want to log it or show an error message
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+
         }
         // la methode qui retourne un livre en se basant de son id
         public Reservation GetReserationByID(int id)

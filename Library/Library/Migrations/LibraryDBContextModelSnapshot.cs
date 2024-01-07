@@ -167,12 +167,6 @@ namespace Library.Migrations
                     b.Property<DateTime>("DateRetourPrevue")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("EmployeId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("RetourEffectue")
-                        .HasColumnType("bit");
-
                     b.Property<int>("livreId")
                         .HasColumnType("int");
 

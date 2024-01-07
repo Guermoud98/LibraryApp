@@ -65,6 +65,10 @@ namespace Library.GUI
             if(adherentManager.ValidEmail(email))
             {
                 adherentManager.AddAdherent(newAdherent);
+                ConnexionWindow connexion = new ConnexionWindow();
+                MessageBox.Show("Inscription acceptee", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                connexion.Show();
+                Hide();
             }
             else
             {

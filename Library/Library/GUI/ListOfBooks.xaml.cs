@@ -2,6 +2,7 @@
 using Library.DAO;
 using Library.GUI.booksPicture;
 using Library.Models;
+using Library.Sessions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -88,9 +89,10 @@ namespace Library.GUI
                 readTextBlock.TextAlignment = TextAlignment.Center;
                 readTextBlock.Foreground = Brushes.Green;
                 Button readButton = new Button();
-                readButton.Content = "Read";
+                readButton.Content = "Reserver";
                 stackPanel.Children.Add(readButton);
                 wrapPanel.Children.Add(stackPanel);
+                readButton.Click += (s, e) => ReserverHistoryBook_Click(livre);
             }
 
             // Set the WrapPanel as the content of the ScrollViewer
@@ -107,6 +109,47 @@ namespace Library.GUI
             {
                 e.Cancel = true;
             }
+        }
+        private void ReserverHistoryBook_Click(Livre livre)
+        {
+            // Create a new window for book details and pass the selected livre
+            if (livre.Titre == "A City On Mars")
+            {
+                // Assuming you have a user ID, replace 1 with the actual user ID
+                int userId = ConnectedAdherent.CurrentAdherentId; // Replace with the actual user ID
+
+                // Create a new Reservation object
+                Reservation reservation = new Reservation
+                {
+                    livreId = livre.IdLivre, // Assuming IdLivre is the primary key of the Livre entity
+                    AdherentId = userId,      // Assuming AdherentId is the primary key of the Adherent entity
+                    DateReservation = DateTime.Now,
+                    DateRetourPrevue = DateTime.Now.AddDays(14) // Set the return date to 14 days from now
+                   
+                };
+
+
+
+                // Update the Livre entity to mark it as unavailable
+                    LibraryDBContext dbContext = new LibraryDBContext();
+                
+                    LivreManager livreManager = new LivreManager(new LivreDAO(dbContext));
+                    Livre updatedLivre = livreManager.GetLivreByID(livre.IdLivre);
+                    updatedLivre.Disponible = "non";
+                    livreManager.UpdateLivre(updatedLivre);
+                    ReservationManager res = new ReservationManager(new ReservationDAO(dbContext));
+                    res.AddReservation(reservation);
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Vous venez de reserver le livre " + livre.Titre, "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
+
+                // Optionally, you can navigate to the book details window here if needed
+                // ACityOnMars bookDetailsWindow = new ACityOnMars();
+                // bookDetailsWindow.Show();
+                // Hide();
+            }
+
         }
 
 
