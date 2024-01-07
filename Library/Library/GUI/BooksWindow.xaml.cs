@@ -16,6 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace Library.GUI
 {
@@ -61,6 +62,18 @@ namespace Library.GUI
             };
             l.AddLivre(livre);
            
+        }
+
+    
+
+        private void AfficherLivresBtn_Click(object sender, RoutedEventArgs e)
+        {
+            LivreManager l = new LivreManager(new LivreDAO(conn));
+            List<Livre> livres = l.GetAllLivre();
+            dataGridBooks.ItemsSource = livres;
+            dataGridBooks.Visibility = Visibility.Visible;
+            Grid.Visibility = Visibility.Hidden;
+
         }
     }
 }

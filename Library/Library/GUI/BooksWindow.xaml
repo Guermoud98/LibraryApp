@@ -12,7 +12,7 @@
         <!-- Email  -->
         <!-- Password  -->
         <!-- btn crreer un compte -->
-        <Grid Margin="10,10,10,56">
+        <Grid x:Name="Grid" Margin="0,33,20,33" Visibility="Visible">
             <!-- Nom  -->
             <TextBox x:Name="TextBoxTitre" HorizontalAlignment="Center" Margin="0,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <!-- Prénom  -->
@@ -27,10 +27,12 @@
             <Label Content="Titre" HorizontalAlignment="Left" Margin="239,50,0,0" VerticalAlignment="Top" Width="65"/>
             <Label Content="Auteur" HorizontalAlignment="Left" Margin="239,95,0,0" VerticalAlignment="Top" Width="65"/>
             <Label Content="Categorie" HorizontalAlignment="Left" Margin="239,149,0,0" VerticalAlignment="Top" Width="65"/>
-            <TextBox x:Name="TextBoxBrowse" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Margin="351,271,0,0" Height="14"/>
+            <TextBox x:Name="TextBoxBrowse" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Margin="330,266,0,0" Height="19"/>
             <Label Content="Image" HorizontalAlignment="Left" Margin="239,253,0,0" VerticalAlignment="Top" Width="65"/>
-            <TextBox x:Name="TextBoxDisponible" HorizontalAlignment="Left" Margin="368,211,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-
+            <TextBox x:Name="TextBoxDisponible" HorizontalAlignment="Center" Margin="0,206,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+            <Button x:Name ="AfficherLivresBtn" Content="AfficherLivresBtn" HorizontalAlignment="Left" Margin="272,323,0,0" VerticalAlignment="Top" Click="AfficherLivresBtn_Click" />
+            <DataGrid x:Name="dataGridBooks" AutoGenerateColumns="True" Visibility="Hidden" />
+           
         </Grid>
 
     </Grid>

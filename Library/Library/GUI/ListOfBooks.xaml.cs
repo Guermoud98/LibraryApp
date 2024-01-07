@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Library.Business;
+using Library.DAO;
+using Library.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,11 +22,24 @@ namespace Library.GUI
     /// </summary>
     public partial class ListOfBooks : Window
     {
+        LibraryDBContext conn = new LibraryDBContext();
         public ListOfBooks()
         {
             InitializeComponent();
         }
 
-       
+
+
+        private void HistoryBook(object sender, RoutedEventArgs e)
+        {
+            BooksOfHistory historyBooks = new BooksOfHistory();
+            historyBooks.Show();
+            Hide();
+            LivreManager livreManager = new LivreManager(new LivreDAO(conn));
+            List<Livre> livres = livreManager.GetAllLivre();
+
+            // Bind the history books to the DataGrid
+            historyBooks.dataGridHistoryBooks.ItemsSource = livres;
+        }
     }
 }
