@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace Library.Models
 {
@@ -25,6 +26,7 @@ namespace Library.Models
         public string Disponible { get; set; }
 
         public byte[] Image { get; set; }
+      
 
         // Relation avec la table Reservation (un livre peut avoir plusieurs réservations)
         //public ICollection<Reservation> Reservations { get; set; }
