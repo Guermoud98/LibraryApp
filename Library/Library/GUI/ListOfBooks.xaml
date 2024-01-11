@@ -55,7 +55,7 @@
         <TextBlock TextWrapping="Wrap" Text="Découvrez la nouveauté" Margin="271,54,128,329"
            FontSize="24" FontWeight="Bold" Foreground="#333333" FontFamily="Segoe UI"/>
         <!-- History btn -->
-        <Button x:Name="History" Content="History" HorizontalAlignment="Left" Margin="271,368,0,0" VerticalAlignment="Top" Click="HistoryBook" Background="Black" Foreground="White" Height="25" Width="78">
+        <Button x:Name="History" Content="History" HorizontalAlignment="Left" Margin="271,368,0,0" VerticalAlignment="Top" Click="History_Btn" Background="Black" Foreground="White" Height="25" Width="78">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
@@ -65,7 +65,7 @@
             </Button.Template>
         </Button>
         <!-- Science btn -->
-        <Button x:Name="Science" Content="Science" HorizontalAlignment="Left" Margin="358,368,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White" Height="25" Width="78">
+        <Button x:Name="Science" Content="Science" HorizontalAlignment="Left" Margin="358,368,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White" Height="25" Width="78" Click="Science_Btn">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">

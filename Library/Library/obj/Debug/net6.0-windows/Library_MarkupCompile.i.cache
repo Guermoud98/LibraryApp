@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\App.xaml
-7800498097
+8-1189687073
 
-43-1919440186
+44204278204
 222-620177467
-GUI\AccueilWindow.xaml;GUI\BooksOfHistory.xaml;GUI\BooksWindow.xaml;GUI\ConnexionWindow.xaml;GUI\InscriptionWindow.xaml;GUI\ListOfBooks.xaml;MainWindow.xaml;
+GUI\AccueilWindow.xaml;GUI\BooksOfHistory.xaml;GUI\BooksOfScience.xaml;GUI\BooksWindow.xaml;GUI\ConnexionWindow.xaml;GUI\InscriptionWindow.xaml;GUI\ListOfBooks.xaml;MainWindow.xaml;
 
-False
+True
 

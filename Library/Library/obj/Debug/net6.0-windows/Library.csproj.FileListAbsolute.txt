@@ -75,3 +75,5 @@ C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\o
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\BooksWindow.baml
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\BooksOfHistory.g.cs
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\BooksOfHistory.baml
+C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\BooksOfScience.g.cs
+C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\BooksOfScience.baml
