@@ -27,10 +27,10 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <!-- 
+         
         <Button Content="Button" HorizontalAlignment="Left" Margin="535,371,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
         
         
-        -->
+        
     </Grid>
 </Window>

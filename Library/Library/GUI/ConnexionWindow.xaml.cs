@@ -54,6 +54,7 @@ namespace Library.GUI
 
         }
 
+        //le btn dans la page cnx juste pour tester l'insertion des livres
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             BooksWindow b = new BooksWindow();

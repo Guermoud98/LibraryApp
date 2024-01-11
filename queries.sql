@@ -2,10 +2,9 @@ CREATE DATABASE libraryApp;
 use libraryApp;
 SELECT * FROM dbo.__EFMigrationsHistory;
 SELECT * FROM Adherents;
+DELETE FROM Adherents WHERE idAdherent = 3;
 SELECT * FROM Livres;
 SELECT * FROM Reservations;
 UPDATE Livres SET Disponible = 'Oui' WHERE IdLivre = 3;
-DELETE FROM Livres WHERE idLivre = 8;
-
-USE reservationTaxi;
-SELECT * FROM client;
+UPDATE Livres SET Categorie = 'History';
+DELETE FROM Reservations WHERE idReservation = 1017;

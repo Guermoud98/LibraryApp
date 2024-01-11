@@ -8,7 +8,11 @@
         Title="BooksOfHistory" Height="450" Width="800">
     
     <Grid>
-        <DataGrid x:Name="dataGridHistoryBooks" AutoGenerateColumns="True" />
+        <!--   <DataGrid x:Name="dataGridHistoryBooks" AutoGenerateColumns="True" />  -->
+
+        <WrapPanel x:Name="WrapPanel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Width="720" Margin="54,110,0,0" Height="206">
+            
+        </WrapPanel>
 
 
     </Grid>

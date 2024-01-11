@@ -5,7 +5,7 @@ using Library.Models;
 using Library.Sessions;
 using System;
 using System.Collections.Generic;
-using System.IO;
+using System.IO; //MemoryStream
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,15 +32,96 @@ namespace Library.GUI
             InitializeComponent();
         }
 
+        private void HistoryBook(object sender, RoutedEventArgs e)
+        {
+
+                var livres = (from t in conn.Livres where t.Categorie == "History" select new { t.Image, t.Titre, t.Disponible } );
+               /* var result = (from t in conn.Livres where t.Categorie == "History" select t.Image).FirstOrDefault();// on s'interesse aux images des livres avec la catégorie = History 
+                Stream StreamObj = new MemoryStream(result); // j'alloue une partie de la mémoire vive pour stocker temporairement les images avant d'être utilisées pour créer un objet BitmapImage
+                BitmapImage BitObj = new BitmapImage();
+                BitObj.BeginInit();
+                BitObj.StreamSource = StreamObj;
+                BitObj.EndInit();
+                BooksOfHistory booksHistory = new BooksOfHistory(); //the window of history books
+                booksHistory.Show();
+                Hide();
+                booksHistory.image.Source = BitObj; //image c'est le nom de l'image dans wrapPanel
+                */
+               foreach(var item in livres)
+                {
+                BooksOfHistory historyWindow = Application.Current.Windows.OfType<BooksOfHistory>().FirstOrDefault(); //this expression returns the first window in the collection of open windows that is of the type BooksOfHistory, or null if there are no such windows open.
+
+                if (historyWindow == null)
+                {
+                    historyWindow = new BooksOfHistory(); //the window of history books
+                    historyWindow.Show();
+                    Hide();
+                    
+                }
+                StackPanel stackPanel = new StackPanel();
+                var image = item.Image; 
+                Stream StreamObj = new MemoryStream(image);
+                BitmapImage BitObj = new BitmapImage();
+                BitObj.BeginInit();
+                BitObj.StreamSource = StreamObj;
+                BitObj.EndInit();
+
+                // Create and configure Image control
+                Image newImage = new Image();
+                newImage.Width = 98;
+                newImage.Height = 133;
+                newImage.Source = BitObj;
+
+                //TextBlock for book title
+                TextBlock titre = new TextBlock();
+                titre.TextAlignment = TextAlignment.Center;
+                titre.Height = 16;
+                titre.Text = item.Titre;
+
+                //TextBlock for book Availability
+                TextBlock disponible = new TextBlock();
+                disponible.TextAlignment = TextAlignment.Center;
+                disponible.Foreground = Brushes.Green;
+                disponible.Height = 17;
+                disponible.Text = item.Disponible;
+
+                //Adding children(newImae, titre, disponible) to the stackPanel
+                stackPanel.Children.Add(newImage);
+                stackPanel.Children.Add(titre);
+                stackPanel.Children.Add(disponible);
+
+                //Adding stackPanel to the wrapPanel
+                historyWindow.WrapPanel.Children.Add(stackPanel);
+
+
+
+                /* historyWindow.image.Source = BitObj;
+                 historyWindow.titre.Text = item.Titre;
+                 historyWindow.availableOrNot.Text = item.Disponible;*/
+
+
+
+
+
+
+            }
+
+
+        }
+
+
+
+
+        /*
 
         private void HistoryBook(object sender, RoutedEventArgs e)
         {
-            ListOfBooksClass listOfBooks = new ListOfBooksClass();
+            ListOfBooksClass listOfBooks = new ListOfBooksClass();  //la liste des titres de tous les livres qu'on a au niveau de ce projet
             BooksOfHistory historyBooks = new BooksOfHistory();
-            historyBooks.Show();
+            historyBooks.Show(); //window of history books 
             Hide(); // we hide the listOfBooks window
             LivreManager livreManager = new LivreManager(new LivreDAO(conn));
-            List<Livre> livres = livreManager.GetAllLivre();
+            List<Livre> livres = livreManager.GetAllLivre(); // we retrieve books of histroy from database
 
             // Create a ScrollViewer
             ScrollViewer scrollViewer = new ScrollViewer();
@@ -54,7 +135,7 @@ namespace Library.GUI
             wrapPanel.Width = 720;
             wrapPanel.Margin = new Thickness(54, 110, 0, 0);
 
-            foreach (var livre in livres)
+            foreach (var livre in livres) //looping through books retrieved from db
             {
                 StackPanel stackPanel = new StackPanel();
                 stackPanel.Margin = new Thickness(10);
@@ -62,10 +143,10 @@ namespace Library.GUI
                 // Image
                 Image image = new Image();
 
-                // Condition to use a specific local image for a specific livre
+                
                 foreach (var book in listOfBooks.GetLivre())
                 {
-                    // Check if the titles match
+                    
                     if (book.Title == livre.Titre)
                     {
                         // Set the local image path on your PC
@@ -115,14 +196,14 @@ namespace Library.GUI
             // Create a new window for book details and pass the selected livre
             if (livre.Titre == "A City On Mars")
             {
-                // Assuming you have a user ID, replace 1 with the actual user ID
-                int userId = ConnectedAdherent.CurrentAdherentId; // Replace with the actual user ID
+             
+                int userId = ConnectedAdherent.CurrentAdherentId; 
 
                 // Create a new Reservation object
                 Reservation reservation = new Reservation
                 {
-                    livreId = livre.IdLivre, // Assuming IdLivre is the primary key of the Livre entity
-                    AdherentId = userId,      // Assuming AdherentId is the primary key of the Adherent entity
+                    livreId = livre.IdLivre, 
+                    AdherentId = userId,   
                     DateReservation = DateTime.Now,
                     DateRetourPrevue = DateTime.Now.AddDays(14) // Set the return date to 14 days from now
                    
@@ -144,16 +225,12 @@ namespace Library.GUI
 
 
 
-                // Optionally, you can navigate to the book details window here if needed
-                // ACityOnMars bookDetailsWindow = new ACityOnMars();
-                // bookDetailsWindow.Show();
-                // Hide();
             }
 
-        }
+        } */
 
-
-
+     
+ 
 
 
     }

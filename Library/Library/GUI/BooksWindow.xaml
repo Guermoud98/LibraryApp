@@ -22,7 +22,7 @@
             <!-- Password  -->
             <Label Content="Disponible" HorizontalAlignment="Left" Margin="239,198,0,0" VerticalAlignment="Top" Width="65"/>
             <!-- btn crreer un compte -->
-            <Button Content="Ajouter un livre" HorizontalAlignment="Left" Margin="410,303,0,0" VerticalAlignment="Top" Click="CreerCompte" Width="114"/>
+            <Button Content="Ajouter un livre" HorizontalAlignment="Left" Margin="410,303,0,0" VerticalAlignment="Top" Click="AjouterLivreBtn" Width="114"/>
             <Button x:Name="BrowseBtn" Content="Browse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="512,278,0,0" Click="BrowseButton_Click"/>
             <Label Content="Titre" HorizontalAlignment="Left" Margin="239,50,0,0" VerticalAlignment="Top" Width="65"/>
             <Label Content="Auteur" HorizontalAlignment="Left" Margin="239,95,0,0" VerticalAlignment="Top" Width="65"/>

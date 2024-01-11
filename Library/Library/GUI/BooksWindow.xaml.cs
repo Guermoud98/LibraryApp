@@ -37,21 +37,23 @@ namespace Library.GUI
             openFileDialog.Filter = "Image files (*.png;*.jpeg;*.jpg)|*.png;*.jpeg;*.jpg|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                // Set the selected file path to the TextBox
+                // we set the selected file path to the TextBox
                 TextBoxBrowse.Text = openFileDialog.FileName;
             }
         }
 
-        private void CreerCompte(object sender, RoutedEventArgs e)
+        //pour creer un livre
+        private void AjouterLivreBtn(object sender, RoutedEventArgs e)
         {
             LivreManager l = new LivreManager(new LivreDAO(conn));
             string titre = TextBoxTitre.Text;
             string auteur = TextBoxAuteur.Text;
             string categorie = TextBoxCategorie.Text;
             string disponible = TextBoxDisponible.Text;
-            string image = TextBoxBrowse.Text;
+            string imagePath = TextBoxBrowse.Text;
             // Convert the image path to a byte array
-            byte[] imageBytes = File.ReadAllBytes(image);
+            byte[] imageBytes = File.ReadAllBytes(imagePath); //it reads all the bytes(binary data) from the file specified by the image path
+
             Livre livre = new Livre()
             {
                 Titre = titre,
