@@ -10,6 +10,9 @@
     <Compile Update="GUI\AccueilWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GUI\BooksOfBusiness.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="GUI\BooksOfHistory.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="GUI\AccueilWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI\BooksOfBusiness.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="GUI\BooksOfHistory.xaml">

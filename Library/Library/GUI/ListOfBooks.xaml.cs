@@ -140,5 +140,57 @@ namespace Library.GUI
             }
 
         }
+
+        private void Business_Btn(object sender, RoutedEventArgs e)
+        {
+            var livres = (from t in conn.Livres where t.Categorie == "Business" select new { t.Image, t.Titre, t.Disponible });
+
+            foreach (var item in livres)
+            {
+                BooksOfBusiness BusinessWindow = Application.Current.Windows.OfType<BooksOfBusiness>().FirstOrDefault(); //this expression returns the first window in the collection of open windows that is of the type BooksOfHistory, or null if there are no such windows open.
+
+                if (BusinessWindow == null)
+                {
+                    BusinessWindow = new BooksOfBusiness(); //the window of Science books
+                    BusinessWindow.Show();
+                    Hide();
+
+                }
+                StackPanel stackPanel = new StackPanel();
+                var image = item.Image;
+                Stream StreamObj = new MemoryStream(image);
+                BitmapImage BitObj = new BitmapImage();
+                BitObj.BeginInit();
+                BitObj.StreamSource = StreamObj;
+                BitObj.EndInit();
+
+                // Create and configure Image control
+                Image newImage = new Image();
+                newImage.Width = 98;
+                newImage.Height = 133;
+                newImage.Source = BitObj;
+
+                //TextBlock for book title
+                TextBlock titre = new TextBlock();
+                titre.TextAlignment = TextAlignment.Center;
+                titre.Height = 16;
+                titre.Text = item.Titre;
+
+                //TextBlock for book Availability
+                TextBlock disponible = new TextBlock();
+                disponible.TextAlignment = TextAlignment.Center;
+                disponible.Foreground = Brushes.Green;
+                disponible.Height = 17;
+                disponible.Text = item.Disponible;
+
+                //Adding children(newImae, titre, disponible) to the stackPanel
+                stackPanel.Children.Add(newImage);
+                stackPanel.Children.Add(titre);
+                stackPanel.Children.Add(disponible);
+
+                //Adding stackPanel to the wrapPanel
+                BusinessWindow.WrapPanel.Children.Add(stackPanel);
+            }
+        }
     }
 }

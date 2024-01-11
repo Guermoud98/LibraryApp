@@ -75,7 +75,7 @@
             </Button.Template>
         </Button>
         <!--Business btn -->
-        <Button x:Name="Business" Content="Business" HorizontalAlignment="Left" Margin="445,368,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White" Height="25" Width="78">
+        <Button x:Name="Business" Content="Business" HorizontalAlignment="Left" Margin="445,368,0,0" VerticalAlignment="Top"  Background="Black" Foreground="White" Height="25" Width="78" Click="Business_Btn">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
