@@ -7,9 +7,7 @@
         mc:Ignorable="d"
         Title="BookInfo" Height="450" Width="800">
     <Grid >
-        <WrapPanel x:Name="WrapPanel" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Width="Auto" Margin="54,110,0,0" Height="Auto">
-
-        </WrapPanel>
+        <WrapPanel x:Name="WrapPanel" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="696" Height="314"/>
 
     </Grid>
 </Window>
