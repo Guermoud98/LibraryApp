@@ -26,6 +26,7 @@ namespace Library.GUI
     public partial class ListOfBooks : Window
     {
         LibraryDBContext conn = new LibraryDBContext();
+        public static int idLivreValue { get; set; }
         public ListOfBooks()
         {
             InitializeComponent();
@@ -80,7 +81,7 @@ namespace Library.GUI
                 infoBtn.Height = 30;
                 infoBtn.Width = 30;
 
-                //Adding children(newImae, titre, disponible) to the stackPanel
+                //Adding children(newImae, titre, disponible, btnInfo) to the stackPanel
                 stackPanel.Children.Add(newImage);
                 stackPanel.Children.Add(titre);
                 stackPanel.Children.Add(disponible);
@@ -99,6 +100,10 @@ namespace Library.GUI
             bookInfo.Show();
             Hide();
             StackPanel stackPanel= new StackPanel();
+
+            //idLivre
+            idLivreValue = idLivre; //the idLireValue is a static member which is helpful for the reservation to remember the id of the wanted book 
+            
             //image
             Image img = new Image();
             img.Width = 98;
@@ -118,12 +123,10 @@ namespace Library.GUI
             title.Height = 16;
             title.Text = titre;
 
-
             //Adding elements to the stackPanel 
             stackPanel.Children.Add(title);
             stackPanel.Children.Add(img);
             stackPanel.Children.Add(desc);
-
 
             // Wrapping the stackPanel in a ScrollViewer
             ScrollViewer scrollViewer = new ScrollViewer();

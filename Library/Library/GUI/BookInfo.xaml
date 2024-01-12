@@ -8,6 +8,7 @@
         Title="BookInfo" Height="450" Width="800">
     <Grid >
         <WrapPanel x:Name="WrapPanel" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="696" Height="314"/>
+        <Button x:Name="btnReserver" Content="Réserver" HorizontalAlignment="Center" Margin="0,388,0,0" VerticalAlignment="Top" Click="ReserverBtn"/>
 
     </Grid>
 </Window>
