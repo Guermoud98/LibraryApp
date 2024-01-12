@@ -186,7 +186,7 @@ namespace Library.GUI
                 infoBtn.Height = 30;
                 infoBtn.Width = 30;
 
-                //Adding children(newImae, titre, disponible) to the stackPanel
+                //Adding children(newImae, titre, disponible, btnInfo) to the stackPanel
                 stackPanel.Children.Add(newImage);
                 stackPanel.Children.Add(titre);
                 stackPanel.Children.Add(disponible);
@@ -201,7 +201,7 @@ namespace Library.GUI
 
         private void Business_Btn(object sender, RoutedEventArgs e)
         {
-            var livres = (from t in conn.Livres where t.Categorie == "Business" select new { t.Image, t.Titre, t.Disponible });
+            var livres = (from t in conn.Livres where t.Categorie == "Business" select new { t.Image, t.Titre, t.Disponible, t.Description, t.IdLivre });
 
             foreach (var item in livres)
             {
@@ -241,13 +241,22 @@ namespace Library.GUI
                 disponible.Height = 17;
                 disponible.Text = item.Disponible;
 
-                //Adding children(newImae, titre, disponible) to the stackPanel
+                //btn Infos
+                Button infoBtn = new Button();
+                infoBtn.Content = "Infos";
+                infoBtn.Height = 30;
+                infoBtn.Width = 30;
+
+                //Adding children(newImae, titre, disponible, btnInfo) to the stackPanel
                 stackPanel.Children.Add(newImage);
                 stackPanel.Children.Add(titre);
                 stackPanel.Children.Add(disponible);
+                stackPanel.Children.Add(infoBtn);
 
                 //Adding stackPanel to the wrapPanel
                 BusinessWindow.WrapPanel.Children.Add(stackPanel);
+                infoBtn.Click += (senderBtn, eBtn) => btnInfo(senderBtn, eBtn, item.IdLivre, item.Description, BitObj, item.Titre);
+
             }
         }
     }
