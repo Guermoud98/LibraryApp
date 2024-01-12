@@ -15,6 +15,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 
 namespace Library.GUI
@@ -33,7 +34,7 @@ namespace Library.GUI
         private void History_Btn(object sender, RoutedEventArgs e)
         {
 
-               var livres = (from t in conn.Livres where t.Categorie == "History" select new { t.Image, t.Titre, t.Disponible } );
+               var livres = (from t in conn.Livres where t.Categorie == "History" select new { t.Image, t.Titre, t.Disponible, t.Description, t.IdLivre } );
            
                foreach(var item in livres)
                 {
@@ -73,16 +74,66 @@ namespace Library.GUI
                 disponible.Height = 17;
                 disponible.Text = item.Disponible;
 
+                //btn Infos
+                Button infoBtn = new Button();
+                infoBtn.Content = "Infos";
+                infoBtn.Height = 30;
+                infoBtn.Width = 30;
+
                 //Adding children(newImae, titre, disponible) to the stackPanel
                 stackPanel.Children.Add(newImage);
                 stackPanel.Children.Add(titre);
                 stackPanel.Children.Add(disponible);
+                stackPanel.Children.Add(infoBtn);
 
                 //Adding stackPanel to the wrapPanel
                 historyWindow.WrapPanel.Children.Add(stackPanel);
-
+                infoBtn.Click += (senderBtn, eBtn) => btnInfo(senderBtn, eBtn, item.IdLivre, item.Description, BitObj, item.Titre);
 
             }
+
+        }
+        private void btnInfo(object sender, RoutedEventArgs e, int idLivre, String description, BitmapImage bitObj, String titre)
+        {
+            BookInfo bookInfo = new BookInfo();
+            bookInfo.Show();
+            Hide();
+            StackPanel stackPanel= new StackPanel();
+            //image
+            Image img = new Image();
+            img.Width = 98;
+            img.Height = 133;
+            img.Source = bitObj;
+
+            //book description
+            TextBlock desc = new TextBlock();
+            desc.Foreground = Brushes.Green;
+            desc.Text = description;
+            desc.TextWrapping = TextWrapping.Wrap;
+            Console.WriteLine(description);
+
+            //book title
+            TextBlock title = new TextBlock();
+            title.TextAlignment = TextAlignment.Center;
+            title.Height = 16;
+            title.Text = titre;
+
+
+            //Adding elements to the stackPanel 
+            stackPanel.Children.Add(title);
+            stackPanel.Children.Add(img);
+            stackPanel.Children.Add(desc);
+
+
+            // Wrapping the stackPanel in a ScrollViewer
+            ScrollViewer scrollViewer = new ScrollViewer();
+            scrollViewer.Content = stackPanel;
+
+            // Adding the ScrollViewer to the wrapPanel of the BookInfo window
+            bookInfo.WrapPanel.Children.Add(scrollViewer);
+
+
+
 
         }
 
@@ -130,6 +181,7 @@ namespace Library.GUI
                 disponible.Height = 17;
                 disponible.Text = item.Disponible;
 
+
                 //Adding children(newImae, titre, disponible) to the stackPanel
                 stackPanel.Children.Add(newImage);
                 stackPanel.Children.Add(titre);
@@ -151,7 +203,7 @@ namespace Library.GUI
 
                 if (BusinessWindow == null)
                 {
-                    BusinessWindow = new BooksOfBusiness(); //the window of Science books
+                    BusinessWindow = new BooksOfBusiness(); //the window of Business books
                     BusinessWindow.Show();
                     Hide();
 

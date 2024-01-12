@@ -79,3 +79,5 @@ C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\o
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\BooksOfScience.baml
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\BooksOfBusiness.g.cs
 C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\BooksOfBusiness.baml
+C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\BookInfo.g.cs
+C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\obj\Debug\net6.0-windows\GUI\BookInfo.baml

@@ -37,10 +37,6 @@ namespace Library.Models
         // Indicateur de retour effectué (par défaut à false, car la réservation n'a pas encore été retournée)
        // public bool RetourEffectue { get; set; } = false;
 
-        // Relation avec la table Livre (une réservation appartient à un livre)
-        //public Livre livre { get; set; }
-
-        // Relation avec la table Adherent (une réservation appartient à un adhérent)
-        //public Adherent adherent { get; set; }
+        
     }
 }

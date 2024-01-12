@@ -14,6 +14,7 @@
 
         
         <WrapPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Width="720" Margin="54,110,0,0" Height="206">
+            
             <StackPanel Margin="10">
                 <Image Source="C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\ACityOnMarsScience.jpg" Width="98" Height="133"/>
                 <TextBlock Text="A City on Mars" TextAlignment="Center" Height="16"/>

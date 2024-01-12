@@ -26,6 +26,8 @@ namespace Library.Models
         public string Disponible { get; set; }
 
         public byte[] Image { get; set; }
+
+        public string Description { get; set; }
       
 
         // Relation avec la table Reservation (un livre peut avoir plusieurs réservations)
