@@ -35,7 +35,7 @@ namespace Library.GUI
         private void History_Btn(object sender, RoutedEventArgs e)
         {
 
-               var livres = (from t in conn.Livres where t.Categorie == "History" select new { t.Image, t.Titre, t.Disponible, t.Description, t.IdLivre } );
+               var livres = (from t in conn.Livres where t.Categorie == "History" && t.Disponible == "Disponible" select new { t.Image, t.Titre, t.Disponible, t.Description, t.IdLivre } );
            
                foreach(var item in livres)
                 {
@@ -142,7 +142,7 @@ namespace Library.GUI
 
         private void Science_Btn(object sender, RoutedEventArgs e)
         {
-            var livres = (from t in conn.Livres where t.Categorie == "Science" select new { t.Image, t.Titre, t.Disponible, t.Description, t.IdLivre });
+            var livres = (from t in conn.Livres where t.Categorie == "Science" && t.Disponible == "Disponible" select new { t.Image, t.Titre, t.Disponible, t.Description, t.IdLivre });
 
 
             foreach (var item in livres)
@@ -204,7 +204,7 @@ namespace Library.GUI
 
         private void Business_Btn(object sender, RoutedEventArgs e)
         {
-            var livres = (from t in conn.Livres where t.Categorie == "Business" select new { t.Image, t.Titre, t.Disponible, t.Description, t.IdLivre });
+            var livres = (from t in conn.Livres where t.Categorie == "Business" && t.Disponible == "Disponible" select new { t.Image, t.Titre, t.Disponible, t.Description, t.IdLivre });
 
             foreach (var item in livres)
             {

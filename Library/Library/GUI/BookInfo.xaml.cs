@@ -42,6 +42,7 @@ namespace Library.GUI
             };
             ReservationManager reservationManager = new ReservationManager(new ReservationDAO(conn));
             reservationManager.AddReservation(reservation);
+
             // Query the database for the row to be updated.
             Livre disponibilite = (from t in conn.Livres where t.IdLivre == ListOfBooks.idLivreValue select t).FirstOrDefault();
             disponibilite.Disponible = "Non Disponible";
