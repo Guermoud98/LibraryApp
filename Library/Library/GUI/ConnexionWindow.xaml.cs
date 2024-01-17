@@ -48,7 +48,12 @@ namespace Library.GUI
                 Hide();
 
             }
-            //je dois ajouter si less identifiants sont incorrectes
+            // si les identifiants sont incorrectes
+            else
+            {
+                MessageBox.Show("Incorrect email or password. Please try again.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+             
 
 
 

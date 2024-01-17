@@ -42,7 +42,7 @@ namespace Library.GUI
             }
         }
 
-        //pour creer un livre
+        //pour creer un livre et l'ajouter à la BD
         private void AjouterLivreBtn(object sender, RoutedEventArgs e)
         {
             LivreManager l = new LivreManager(new LivreDAO(conn));
@@ -51,6 +51,7 @@ namespace Library.GUI
             string categorie = TextBoxCategorie.Text;
             string disponible = TextBoxDisponible.Text;
             string imagePath = TextBoxBrowse.Text;
+            string description = TextBoxDescription.Text;
             // Convert the image path to a byte array
             byte[] imageBytes = File.ReadAllBytes(imagePath); //it reads all the bytes(binary data) from the file specified by the image path
 
@@ -61,6 +62,7 @@ namespace Library.GUI
                 Categorie = categorie,
                 Disponible = disponible,
                 Image = imageBytes,
+                Description = description,
             };
             l.AddLivre(livre);
            

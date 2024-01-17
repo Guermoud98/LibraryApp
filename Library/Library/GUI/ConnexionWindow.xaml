@@ -18,7 +18,7 @@
         <Label Content="Password" HorizontalAlignment="Left" Margin="508,216,0,0" VerticalAlignment="Top" Width="65" FontWeight="Bold"/>
         <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="593,218,0,0" VerticalAlignment="Top" Width="175" Height="23" />
         <!-- Se connecter button -->
-        <Button x:Name="btnSeConnecter" Content="Se connecter" HorizontalAlignment="Left" Margin="597,282,0,0" VerticalAlignment="Top" Click="SeConnecter" Background="Black" Foreground="White" Height="25" Width="78">
+        <Button ToolTip="Cliquer pour se connecter" x:Name="btnSeConnecter" Content="Se connecter" HorizontalAlignment="Left" Margin="597,282,0,0" VerticalAlignment="Top" Click="SeConnecter" Background="Black" Foreground="White" Height="25" Width="78">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">

@@ -47,10 +47,16 @@ namespace Library.GUI
             Livre disponibilite = (from t in conn.Livres where t.IdLivre == ListOfBooks.idLivreValue select t).FirstOrDefault();
             disponibilite.Disponible = "Non Disponible";
             conn.SaveChanges();
-          
+
+            MessageBox.Show("Votre réservation s'est bien passée.", "Confirmation de réservation", MessageBoxButton.OK, MessageBoxImage.Information);
+
 
 
 
         }
+
+      
+
+       
     }
 }

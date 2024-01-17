@@ -7,8 +7,21 @@
         mc:Ignorable="d"
         Title="BookInfo" Height="450" Width="800">
     <Grid >
-        <WrapPanel x:Name="WrapPanel" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="696" Height="314"/>
-        <Button x:Name="btnReserver" Content="Réserver" HorizontalAlignment="Center" Margin="0,388,0,0" VerticalAlignment="Top" Click="ReserverBtn"/>
+        <WrapPanel Panel.ZIndex="1" x:Name="WrapPanel" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="696" Height="314"/>
+        <Button Panel.ZIndex="1" ToolTip="Cliquer pour réserver" x:Name="btnReserver" Content="Réserver" HorizontalAlignment="Center" Margin="0,379,0,0" VerticalAlignment="Top" Click="ReserverBtn" Background="Black" Foreground="White" Height="25" Width="78">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Grid>
+            <!-- Other elements go here -->
+
+            <Image Panel.ZIndex="0" HorizontalAlignment="Center" Height="667" VerticalAlignment="Top" Width="800" Source="C:\Users\Administrateur\Desktop\Main\EMSI\s7\DotNet\LibraryApp\Library\Library\GUI\booksPicture\background.jpg" Visibility="Visible" Opacity="0.5"/>
+        </Grid>
 
     </Grid>
 </Window>

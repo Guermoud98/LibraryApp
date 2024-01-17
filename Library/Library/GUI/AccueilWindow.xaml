@@ -10,7 +10,7 @@
         <!-- BoyImage -->
         <Image HorizontalAlignment="Left" Height="261" Margin="487,0,0,0" VerticalAlignment="Center" Width="297" Source="/GUI/boyImageWithoutBg.png" />
         <!-- Se connecter button -->
-        <Button x:Name="Connexion" Content="Se connecter" HorizontalAlignment="Left" Margin="613,29,0,0" VerticalAlignment="Top" Click="Login" Background="Black" Foreground="White" Height="25" Width="78">
+        <Button ToolTip="Cliquer pour se connecter"  x:Name="Connexion" Content="Se connecter" HorizontalAlignment="Left" Margin="613,29,0,0" VerticalAlignment="Top" Click="Login" Background="Black" Foreground="White" Height="25" Width="78">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
@@ -21,7 +21,7 @@
         </Button>
 
         <!-- S'inscrire button -->
-        <Button x:Name="Sinscrire" Content="S'inscrire" HorizontalAlignment="Left" Margin="540,29,0,0" VerticalAlignment="Top" Click="SignUp" Foreground="Black" Background="White" Height="25" Width="67">
+        <Button ToolTip="Cliquer pour s'inscrire"  x:Name="Sinscrire" Content="S'inscrire" HorizontalAlignment="Left" Margin="540,29,0,0" VerticalAlignment="Top" Click="SignUp" Foreground="Black" Background="White" Height="25" Width="67">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">

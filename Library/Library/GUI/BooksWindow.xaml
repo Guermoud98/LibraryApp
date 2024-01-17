@@ -22,17 +22,18 @@
             <!-- Password  -->
             <Label Content="Disponible" HorizontalAlignment="Left" Margin="239,198,0,0" VerticalAlignment="Top" Width="65"/>
             <!-- btn crreer un compte -->
-            <Button Content="Ajouter un livre" HorizontalAlignment="Left" Margin="410,303,0,0" VerticalAlignment="Top" Click="AjouterLivreBtn" Width="114"/>
-            <Button x:Name="BrowseBtn" Content="Browse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="512,278,0,0" Click="BrowseButton_Click"/>
+            <Button Content="Ajouter un livre" HorizontalAlignment="Left" Margin="617,326,0,0" VerticalAlignment="Top" Click="AjouterLivreBtn" Width="114"/>
+            <Button x:Name="BrowseBtn" Content="Browse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="493,266,0,0" Click="BrowseButton_Click"/>
             <Label Content="Titre" HorizontalAlignment="Left" Margin="239,50,0,0" VerticalAlignment="Top" Width="65"/>
             <Label Content="Auteur" HorizontalAlignment="Left" Margin="239,95,0,0" VerticalAlignment="Top" Width="65"/>
             <Label Content="Categorie" HorizontalAlignment="Left" Margin="239,149,0,0" VerticalAlignment="Top" Width="65"/>
             <TextBox x:Name="TextBoxBrowse" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Margin="330,266,0,0" Height="19"/>
             <Label Content="Image" HorizontalAlignment="Left" Margin="239,253,0,0" VerticalAlignment="Top" Width="65"/>
             <TextBox x:Name="TextBoxDisponible" HorizontalAlignment="Center" Margin="0,206,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-            <Button x:Name ="AfficherLivresBtn" Content="AfficherLivresBtn" HorizontalAlignment="Left" Margin="272,323,0,0" VerticalAlignment="Top" Click="AfficherLivresBtn_Click" />
             <DataGrid x:Name="dataGridBooks" AutoGenerateColumns="True" Visibility="Hidden" />
-           
+            <Label Content="Description" HorizontalAlignment="Left" Margin="239,323,0,0" VerticalAlignment="Top" Width="89"/>
+            <TextBox x:Name="TextBoxDescription" HorizontalAlignment="Left" Margin="348,327,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+
         </Grid>
 
     </Grid>

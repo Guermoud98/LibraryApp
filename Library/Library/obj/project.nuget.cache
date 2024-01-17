@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "2u7deshpqizg5ZkUXONCbzYTiIRCh4ZVD7HyWt60eBEO8WDwFjikTEXBqVXmnRMJLjJQzN77LLEb2K/zocrOhA==",
+  "dgSpecHash": "BYyc938BehqA65DAiB4WY/JFqviqQl/lW8NHWCW41dqiNQTkuKV3mN8gt+/W3KaB0MiIOnYm+cUL+jKM44cffw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrateur\\Desktop\\Main\\EMSI\\s7\\DotNet\\LibraryApp\\Library\\Library\\Library.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrateur\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Administrateur\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\Administrateur\\.nuget\\packages\\extended.wpf.toolkit\\4.5.1\\extended.wpf.toolkit.4.5.1.nupkg.sha512",
     "C:\\Users\\Administrateur\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Administrateur\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Administrateur\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

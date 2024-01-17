@@ -16,6 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit.Panels;
 
 
 namespace Library.GUI
@@ -48,7 +49,13 @@ namespace Library.GUI
                     Hide();
                     
                 }
+                historyWindow.WrapPanel.Width = double.NaN; // Auto
+                historyWindow.WrapPanel.Height = double.NaN; // Auto
+                historyWindow.WrapPanel.Margin = new Thickness(10, 10, 10, 10);
+
                 StackPanel stackPanel = new StackPanel();
+                stackPanel.Margin = new Thickness(5);
+
                 var image = item.Image; 
                 Stream StreamObj = new MemoryStream(image);
                 BitmapImage BitObj = new BitmapImage();
@@ -58,28 +65,37 @@ namespace Library.GUI
 
                 // Create and configure Image control
                 Image newImage = new Image();
-                newImage.Width = 98;
-                newImage.Height = 133;
+                newImage.Width = 150;
+                newImage.Height = 200;
                 newImage.Source = BitObj;
 
                 //TextBlock for book title
                 TextBlock titre = new TextBlock();
                 titre.TextAlignment = TextAlignment.Center;
-                titre.Height = 16;
+                titre.Height = 25;
                 titre.Text = item.Titre;
+                titre.FontSize = 18; // Taille de police
+                titre.FontWeight = FontWeights.Bold; // Poids de la police
+                titre.Foreground = Brushes.Black; // Couleur du texte
+                titre.Margin = new Thickness(0, 10, 0, 5);
 
                 //TextBlock for book Availability
                 TextBlock disponible = new TextBlock();
                 disponible.TextAlignment = TextAlignment.Center;
                 disponible.Foreground = Brushes.Green;
-                disponible.Height = 17;
+                disponible.Height = 25;
                 disponible.Text = item.Disponible;
+                disponible.Margin = new Thickness(0, 5, 0, 10);
 
                 //btn Infos
                 Button infoBtn = new Button();
                 infoBtn.Content = "Infos";
-                infoBtn.Height = 30;
-                infoBtn.Width = 30;
+                infoBtn.Height = 40;
+                infoBtn.Width = 40;
+                infoBtn.BorderThickness = new Thickness(2);
+                infoBtn.Background= Brushes.Black;
+                infoBtn.Foreground= Brushes.White;
+            
 
                 //Adding children(newImae, titre, disponible, btnInfo) to the stackPanel
                 stackPanel.Children.Add(newImage);
@@ -94,49 +110,7 @@ namespace Library.GUI
             }
 
         }
-        private void btnInfo(object sender, RoutedEventArgs e, int idLivre, String description, BitmapImage bitObj, String titre)
-        {
-            BookInfo bookInfo = new BookInfo();
-            bookInfo.Show();
-            Hide();
-            StackPanel stackPanel= new StackPanel();
-
-            //idLivre
-            idLivreValue = idLivre; //the idLireValue is a static member which is helpful for the reservation to remember the id of the wanted book 
-            
-            //image
-            Image img = new Image();
-            img.Width = 98;
-            img.Height = 133;
-            img.Source = bitObj;
-
-            //book description
-            TextBlock desc = new TextBlock();
-            desc.Foreground = Brushes.Green;
-            desc.Text = description;
-            desc.TextWrapping = TextWrapping.Wrap;
-            Console.WriteLine(description);
-
-            //book title
-            TextBlock title = new TextBlock();
-            title.TextAlignment = TextAlignment.Center;
-            title.Height = 16;
-            title.Text = titre;
-
-            //Adding elements to the stackPanel 
-            stackPanel.Children.Add(title);
-            stackPanel.Children.Add(img);
-            stackPanel.Children.Add(desc);
-
-            // Wrapping the stackPanel in a ScrollViewer
-            ScrollViewer scrollViewer = new ScrollViewer();
-            scrollViewer.Content = stackPanel;
-
-            // Adding the ScrollViewer to the wrapPanel of the BookInfo window
-            bookInfo.WrapPanel.Children.Add(scrollViewer);
-
-
-        }
+       
 
 
 
@@ -156,7 +130,15 @@ namespace Library.GUI
                     Hide();
 
                 }
+
+                //WrapPanel
+                ScienceWindow.WrapPanel.Width = double.NaN; // Auto
+                ScienceWindow.WrapPanel.Height = double.NaN; // Auto
+                ScienceWindow.WrapPanel.Margin = new Thickness(10, 10, 10, 10);
+
                 StackPanel stackPanel = new StackPanel();
+                stackPanel.Margin = new Thickness(5);
+
                 var image = item.Image;
                 Stream StreamObj = new MemoryStream(image);
                 BitmapImage BitObj = new BitmapImage();
@@ -166,28 +148,36 @@ namespace Library.GUI
 
                 // Create and configure Image control
                 Image newImage = new Image();
-                newImage.Width = 98;
-                newImage.Height = 133;
+                newImage.Width = 150;
+                newImage.Height = 200;
                 newImage.Source = BitObj;
 
                 //TextBlock for book title
                 TextBlock titre = new TextBlock();
                 titre.TextAlignment = TextAlignment.Center;
-                titre.Height = 16;
+                titre.Height = 25;
                 titre.Text = item.Titre;
+                titre.FontSize = 18; // Taille de police
+                titre.FontWeight = FontWeights.Bold; // Poids de la police
+                titre.Foreground = Brushes.Black; // Couleur du texte
+                titre.Margin = new Thickness(0, 10, 0, 5);
 
                 //TextBlock for book Availability
                 TextBlock disponible = new TextBlock();
                 disponible.TextAlignment = TextAlignment.Center;
                 disponible.Foreground = Brushes.Green;
-                disponible.Height = 17;
+                disponible.Height = 25;
                 disponible.Text = item.Disponible;
+                disponible.Margin = new Thickness(0, 5, 0, 10);
 
                 //btn Infos
                 Button infoBtn = new Button();
                 infoBtn.Content = "Infos";
-                infoBtn.Height = 30;
-                infoBtn.Width = 30;
+                infoBtn.Height = 40;
+                infoBtn.Width = 40;
+                infoBtn.BorderThickness = new Thickness(2);
+                infoBtn.Background = Brushes.Black;
+                infoBtn.Foreground = Brushes.White;
 
                 //Adding children(newImae, titre, disponible, btnInfo) to the stackPanel
                 stackPanel.Children.Add(newImage);
@@ -199,6 +189,7 @@ namespace Library.GUI
                 ScienceWindow.WrapPanel.Children.Add(stackPanel);
                 infoBtn.Click += (senderBtn, eBtn) => btnInfo(senderBtn, eBtn, item.IdLivre, item.Description, BitObj, item.Titre);
             }
+
 
         }
 
@@ -217,7 +208,15 @@ namespace Library.GUI
                     Hide();
 
                 }
+                //WrapPanel
+                BusinessWindow.WrapPanel.Width = double.NaN; // Auto
+                BusinessWindow.WrapPanel.Height = double.NaN; // Auto
+                BusinessWindow.WrapPanel.Margin = new Thickness(10, 10, 10, 10);
+
+                //stackPanel
                 StackPanel stackPanel = new StackPanel();
+                stackPanel.Margin = new Thickness(5);
+
                 var image = item.Image;
                 Stream StreamObj = new MemoryStream(image);
                 BitmapImage BitObj = new BitmapImage();
@@ -227,28 +226,36 @@ namespace Library.GUI
 
                 // Create and configure Image control
                 Image newImage = new Image();
-                newImage.Width = 98;
-                newImage.Height = 133;
+                newImage.Width = 150;
+                newImage.Height = 200;
                 newImage.Source = BitObj;
 
                 //TextBlock for book title
                 TextBlock titre = new TextBlock();
                 titre.TextAlignment = TextAlignment.Center;
-                titre.Height = 16;
+                titre.Height = 25;
                 titre.Text = item.Titre;
+                titre.FontSize = 18; // Taille de police
+                titre.FontWeight = FontWeights.Bold; // Poids de la police
+                titre.Foreground = Brushes.Black; // Couleur du texte
+                titre.Margin = new Thickness(0, 10, 0, 5);
 
                 //TextBlock for book Availability
                 TextBlock disponible = new TextBlock();
                 disponible.TextAlignment = TextAlignment.Center;
                 disponible.Foreground = Brushes.Green;
-                disponible.Height = 17;
+                disponible.Height = 25;
                 disponible.Text = item.Disponible;
+                disponible.Margin = new Thickness(0, 5, 0, 10);
 
                 //btn Infos
                 Button infoBtn = new Button();
                 infoBtn.Content = "Infos";
-                infoBtn.Height = 30;
-                infoBtn.Width = 30;
+                infoBtn.Height = 40;
+                infoBtn.Width = 40;
+                infoBtn.BorderThickness = new Thickness(2);
+                infoBtn.Background = Brushes.Black;
+                infoBtn.Foreground = Brushes.White;
 
                 //Adding children(newImae, titre, disponible, btnInfo) to the stackPanel
                 stackPanel.Children.Add(newImage);
@@ -261,6 +268,54 @@ namespace Library.GUI
                 infoBtn.Click += (senderBtn, eBtn) => btnInfo(senderBtn, eBtn, item.IdLivre, item.Description, BitObj, item.Titre);
 
             }
+        }
+        //btnInfo
+        private void btnInfo(object sender, RoutedEventArgs e, int idLivre, String description, BitmapImage bitObj, String titre)
+        {
+            BookInfo bookInfo = new BookInfo();
+            bookInfo.Show();
+            Hide();
+            StackPanel stackPanel = new StackPanel();
+
+            //idLivre
+            idLivreValue = idLivre; //the idLireValue is a static member which is helpful for the reservation to remember the id of the wanted book 
+
+            //image
+            Image img = new Image();
+            img.Width = 100;
+            img.Height = 150;
+            img.Source = bitObj;
+
+            //book description
+            TextBlock desc = new TextBlock();
+            desc.Text = description;
+            desc.TextWrapping = TextWrapping.Wrap;
+            Console.WriteLine(description);
+            desc.FontSize = 16; // Set the font size
+            desc.FontWeight = FontWeights.Normal;
+            desc.TextAlignment = TextAlignment.Justify; // Justify the text
+            desc.Foreground = Brushes.Black; // la couleur du texte
+
+            //book's title
+            TextBlock title = new TextBlock();
+            title.TextAlignment = TextAlignment.Center;
+            title.Height = 20;
+            title.Text = titre;
+            title.FontWeight = FontWeights.Bold;
+
+            //Adding elements to the stackPanel 
+            stackPanel.Children.Add(img);
+            stackPanel.Children.Add(title);
+            stackPanel.Children.Add(desc);
+
+            // Wrapping the stackPanel in a ScrollViewer
+            ScrollViewer scrollViewer = new ScrollViewer();
+            scrollViewer.Content = stackPanel;
+
+            // Adding the ScrollViewer to the wrapPanel of the BookInfo window
+            bookInfo.WrapPanel.Children.Add(scrollViewer);
+
+
         }
     }
 }
